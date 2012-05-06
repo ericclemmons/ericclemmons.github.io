@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Eric Clemmons - Official Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Eric Clemmons">
+
+    {% stylesheets filter='less,?yui_css'
+      "@EricClemmonsSiteBundle/Resources/public/less/all.less"
+    %}
+      <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+    {% endstylesheets %}
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+
+      <div class="row-fluid">
+
+        <header class="sidebar span3">
+          <h1>Eric Clemmons</h1>
+        </header>
+
+        <div class="content span9 offset3">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Eric Clemmons 2012</p>
+      </footer>
+
+    </div>
+
+    {%- javascripts
+      'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
+      '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-transition.js'
+      '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-modal.js'
+      '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-dropdown.js'
+      '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-scrollspy.js'
+      '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-tab.js'
+      '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-tooltip.js'
+      '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-popover.js'
+      '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-alert.js'
+      '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-button.js'
+      '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-collapse.js'
+      '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-carousel.js'
+      '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-typeahead.js'
+      filter="?yui_js"
+    %}
+      <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+  </body>
+</html>
