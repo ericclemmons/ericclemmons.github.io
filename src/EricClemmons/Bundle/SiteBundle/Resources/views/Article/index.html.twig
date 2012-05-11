@@ -1,0 +1,17 @@
+{% for article in articles %}
+    <article>
+        <h1>
+            <a href="{{ path('ericclemmons_site_article_view', { 'article': article.slug }) }}">
+                {{ article.title }}
+            </a>
+        </h1>
+
+        <date>
+            {{ article.dateCreated | date('F jS, Y') }}
+        </date>
+    </article>
+
+    {% if not loop.last %}
+    <hr>
+    {% endif %}
+{% endfor %}

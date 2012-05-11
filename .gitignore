@@ -6,3 +6,4 @@ build/
 vendor
 composer.phar
 .vagrant
+.DS_STORE

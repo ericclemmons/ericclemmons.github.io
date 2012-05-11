@@ -4,17 +4,19 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
     <parameters>
-        <parameter key="eric_clemmons_site.example.class">EricClemmons\Bundle\SiteBundle\Example</parameter>
+        <parameter key="article_repository.class">EricClemmons\Bundle\SiteBundle\Repository\ArticleRepository</parameter>
+        <parameter key="page_repository.class">EricClemmons\Bundle\SiteBundle\Repository\PageRepository</parameter>
     </parameters>
 
     <services>
-        <service id="eric_clemmons_site.example" class="%eric_clemmons_site.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="article_repository" class="%article_repository.class%">
+            <argument>%kernel.root_dir%/Resources/articles</argument>
+            <argument type="service" id="markdown.parser" />
+        </service>
+        <service id="page_repository" class="%page_repository.class%">
+            <argument>%kernel.root_dir%/Resources/pages</argument>
+            <argument type="service" id="markdown.parser" />
         </service>
     </services>
-    -->
 </container>
