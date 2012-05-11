@@ -2,13 +2,17 @@
 
 namespace EricClemmons\Bundle\SiteBundle\Repository;
 
-use EricClemmons\Bundle\SiteBundle\Entity\Article;
 use Symfony\Component\Finder\SplFileInfo;
 
-class ArticleRepository extends PageRepository
+class ArticleRepository extends Repository
 {
-    protected function create(SplFileInfo $file)
+    public function getEntityClass()
     {
-        return new Article($file, $this->parser);
+        return 'EricClemmons\\Bundle\\SiteBundle\\Entity\\Article';
+    }
+
+    protected function sort(SplFileInfo $a, SplFileInfo $b)
+    {
+        return $a->getDateCreated() < $b->getDateCreated();
     }
 }
