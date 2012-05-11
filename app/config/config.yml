@@ -56,3 +56,6 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+
+# Static content Configuration
+eric_clemmons_static: ~

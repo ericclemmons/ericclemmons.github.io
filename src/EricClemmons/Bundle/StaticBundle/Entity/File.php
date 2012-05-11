@@ -1,6 +1,6 @@
 <?php
 
-namespace EricClemmons\Bundle\SiteBundle\Entity;
+namespace EricClemmons\Bundle\StaticBundle\Entity;
 
 use Knp\Bundle\MarkdownBundle\Parser\MarkdownParser;
 use Symfony\Component\Finder\SplFileInfo;

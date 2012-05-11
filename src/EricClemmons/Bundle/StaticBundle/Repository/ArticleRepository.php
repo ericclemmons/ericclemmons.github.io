@@ -1,6 +1,6 @@
 <?php
 
-namespace EricClemmons\Bundle\SiteBundle\Repository;
+namespace EricClemmons\Bundle\StaticBundle\Repository;
 
 use Symfony\Component\Finder\SplFileInfo;
 
@@ -8,7 +8,7 @@ class ArticleRepository extends Repository
 {
     public function getEntityClass()
     {
-        return 'EricClemmons\\Bundle\\SiteBundle\\Entity\\Article';
+        return 'EricClemmons\\Bundle\\StaticBundle\\Entity\\Article';
     }
 
     protected function sort(SplFileInfo $a, SplFileInfo $b)

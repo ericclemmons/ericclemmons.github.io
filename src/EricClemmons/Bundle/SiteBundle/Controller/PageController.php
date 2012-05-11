@@ -2,10 +2,10 @@
 
 namespace EricClemmons\Bundle\SiteBundle\Controller;
 
-use EricClemmons\Bundle\SiteBundle\Repository\ArticleRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class PageController extends Controller
 {
@@ -15,7 +15,11 @@ class PageController extends Controller
      */
     public function viewAction($page)
     {
-        $page = $this->get('page_repository')->find($page);
+        $page = $this->get('static.page_repository')->find($page);
+
+        if (! $page) {
+            throw new NotFoundHttpException($page.' Not Found');
+        }
 
         return array('page' => $page);
     }

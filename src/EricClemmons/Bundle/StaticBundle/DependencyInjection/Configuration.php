@@ -1,6 +1,6 @@
 <?php
 
-namespace EricClemmons\Bundle\SiteBundle\DependencyInjection;
+namespace EricClemmons\Bundle\StaticBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,11 +18,14 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('eric_clemmons_site');
+        $rootNode = $treeBuilder->root('eric_clemmons_static');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('articles')->defaultValue('%kernel.root_dir%/Resources/articles')->end()
+                ->scalarNode('pages')->defaultValue('%kernel.root_dir%/Resources/pages')->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }

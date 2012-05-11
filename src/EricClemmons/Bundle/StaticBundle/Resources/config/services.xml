@@ -5,16 +5,16 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="article_repository.class">EricClemmons\Bundle\SiteBundle\Repository\ArticleRepository</parameter>
-        <parameter key="page_repository.class">EricClemmons\Bundle\SiteBundle\Repository\PageRepository</parameter>
+        <parameter key="static.article_repository.class">EricClemmons\Bundle\StaticBundle\Repository\ArticleRepository</parameter>
+        <parameter key="static.page_repository.class">EricClemmons\Bundle\StaticBundle\Repository\PageRepository</parameter>
     </parameters>
 
     <services>
-        <service id="article_repository" class="%article_repository.class%">
+        <service id="static.article_repository" class="%static.article_repository.class%">
             <argument>%kernel.root_dir%/Resources/articles</argument>
             <argument type="service" id="markdown.parser" />
         </service>
-        <service id="page_repository" class="%page_repository.class%">
+        <service id="static.page_repository" class="%static.page_repository.class%">
             <argument>%kernel.root_dir%/Resources/pages</argument>
             <argument type="service" id="markdown.parser" />
         </service>

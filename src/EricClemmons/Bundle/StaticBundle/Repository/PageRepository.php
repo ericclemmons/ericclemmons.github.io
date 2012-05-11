@@ -1,6 +1,6 @@
 <?php
 
-namespace EricClemmons\Bundle\SiteBundle\Repository;
+namespace EricClemmons\Bundle\StaticBundle\Repository;
 
 use Knp\Bundle\MarkdownBundle\Parser\MarkdownParser;
 use Symfony\Component\Finder\Finder;
@@ -10,6 +10,6 @@ class PageRepository extends Repository
 {
     public function getEntityClass()
     {
-        return 'EricClemmons\\Bundle\\SiteBundle\\Entity\\Page';
+        return 'EricClemmons\\Bundle\\StaticBundle\\Entity\\Page';
     }
 }

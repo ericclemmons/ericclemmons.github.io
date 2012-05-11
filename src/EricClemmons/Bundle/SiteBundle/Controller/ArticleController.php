@@ -2,10 +2,10 @@
 
 namespace EricClemmons\Bundle\SiteBundle\Controller;
 
-use EricClemmons\Bundle\SiteBundle\Repository\ArticleRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ArticleController extends Controller
 {
@@ -15,7 +15,7 @@ class ArticleController extends Controller
      */
     public function indexAction()
     {
-        $articles = $this->get('article_repository')->findAll();
+        $articles = $this->get('static.article_repository')->findAll();
 
         return array('articles' => $articles);
     }
@@ -26,7 +26,11 @@ class ArticleController extends Controller
      */
     public function viewAction($article)
     {
-        $article = $this->get('article_repository')->find($article);
+        $article = $this->get('static.article_repository')->find($article);
+
+        if (! $article) {
+            throw new NotFoundHttpException($article.' Not Found');
+        }
 
         return array('article' => $article);
     }
