@@ -11,6 +11,10 @@
 
 h1, h2, h3, h4 { font-weight: 300; }
 
+h1 {
+    padding-bottom: @gridColumnWidth;
+}
+
 body, p {
     font-family: 'Merriweather', serif;
 }
@@ -32,10 +36,6 @@ strong {
     border-right: 1px solid @grayLighter;
 
     header {
-        h1 {
-            padding-bottom: @gridColumnWidth;
-        }
-
         h2 {
             display: none;
         }
@@ -66,7 +66,7 @@ strong {
     article {
         .clearfix();
 
-        h1 {
+        h3 {
             float: left;
         }
 

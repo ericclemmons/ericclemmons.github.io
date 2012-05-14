@@ -56,10 +56,11 @@ abstract class Repository
      *
      * @return array
      */
-    public function findAll()
+    public function findAll($category = null)
     {
         $finder     = new Finder;
-        $files      = $finder->files()->in($this->path)->sortByName();
+        $path       = $this->path.'/'.$category;
+        $files      = $finder->files()->in($path)->sortByName();
         $parser     = $this->parser;
         $entities   = array();
 
@@ -70,6 +71,14 @@ abstract class Repository
         usort($entities, array($this, 'sort'));
 
         return $entities;
+    }
+
+    /**
+     * Find all files in repository path + category folder, sorted & turned into entities
+     */
+    public function findByCategory($category)
+    {
+        return $this->findAll($category);
     }
 
     /**
@@ -99,7 +108,7 @@ abstract class Repository
         if ($matches) {
             list($source, $meta, $rawContent) = $matches;
 
-            $meta       = $meta ? Yaml::parse($meta) : null;
+            $meta       = $meta ? Yaml::parse($meta) : array();
             $content    = $this->parser->transform($rawContent);
 
             $entity->setSource($source);

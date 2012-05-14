@@ -1,0 +1,21 @@
+{% extends 'EricClemmonsSiteBundle::layout.html.twig' %}
+
+
+{% block title %}Projects{% endblock title %}
+
+
+{% block content %}
+{% for project in projects %}
+    <article>
+        <h3>
+            <a href="{{ path('ericclemmons_site_project_view', { 'project': project.slug }) }}">
+                {{ project.title }}
+            </a>
+        </h3>
+
+        <date>
+            {{ project.dateCreated | date('F jS, Y') }}
+        </date>
+    </article>
+{% endfor %}
+{% endblock content %}

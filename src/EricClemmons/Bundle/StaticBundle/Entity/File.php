@@ -20,10 +20,18 @@ abstract class File extends SplFileInfo
         return $this->content;
     }
 
-    public function getDateModified()
+    public function getDateCreated()
     {
         $date = new \DateTime();
         $date->setTimestamp($this->getCTime());
+
+        return $date;
+    }
+
+    public function getDateModified()
+    {
+        $date = new \DateTime();
+        $date->setTimestamp($this->getMTime());
 
         return $date;
     }
@@ -40,6 +48,11 @@ abstract class File extends SplFileInfo
     public function getRawContent()
     {
         return $this->rawContent;
+    }
+
+    public function getSlug()
+    {
+        return basename($this->getBasename(), '.md');
     }
 
     public function getSource()
