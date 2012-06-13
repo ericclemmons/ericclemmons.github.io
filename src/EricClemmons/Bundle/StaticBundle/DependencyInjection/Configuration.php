@@ -22,8 +22,8 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('articles')->defaultValue('%kernel.root_dir%/Resources/articles')->end()
-                ->scalarNode('pages')->defaultValue('%kernel.root_dir%/Resources/pages')->end()
+                ->scalarNode('posts')->defaultValue('%kernel.root_dir%/Resources/content/posts')->end()
+                ->scalarNode('pages')->defaultValue('%kernel.root_dir%/Resources/content/pages')->end()
             ->end()
         ;
 

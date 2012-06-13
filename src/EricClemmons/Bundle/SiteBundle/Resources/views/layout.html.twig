@@ -60,13 +60,21 @@
             <nav id="nav">
                 <menu class="nav nav-pills">
                     <li class="active"><a href="{{ path('ericclemmons_site_activity_index') }}">Latest Activity</a></li>
-                    <li><a href="{{ path('ericclemmons_site_article_index') }}">Articles</a></li>
+                    <li><a href="{{ path('ericclemmons_site_post_index') }}">Posts</a></li>
                     <li><a href="{{ path('ericclemmons_site_project_index') }}">Projects</a></li>
                 </menu>
             </nav>
 
             <section id="content">
-                <h1>{{ block('title') }}</h1>
+                <h1>
+                    {{ block('title') }}
+
+                    {% if block('date') %}
+                    <small class="pull-right">
+                        <date>{{ block('date') }}</date>
+                    </small>
+                    {% endif %}
+                </h1>
 
                 {% block content -%}{% endblock content %}
             </section>

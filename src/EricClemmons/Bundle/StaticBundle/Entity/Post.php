@@ -6,7 +6,7 @@ use Knp\Bundle\MarkdownBundle\Parser\MarkdownParser;
 use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\Yaml\Yaml;
 
-class Article extends File
+class Post extends File
 {
     public function getDateCreated()
     {

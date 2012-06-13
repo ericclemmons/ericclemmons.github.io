@@ -1,0 +1,13 @@
+{% for post in posts %}
+    <article>
+        <h3>
+            <a href="{{ path('ericclemmons_site_post_view', { 'post': post.slug }) }}">
+                {{ post.title }}
+            </a>
+        </h3>
+
+        <date>
+            {{ post.dateCreated | date('F jS, Y') }}
+        </date>
+    </article>
+{% endfor %}

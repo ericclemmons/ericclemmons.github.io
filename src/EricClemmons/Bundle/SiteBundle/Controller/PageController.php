@@ -17,7 +17,7 @@ class PageController extends Controller
     {
         $page = $this->get('static.page_repository')->find($page);
 
-        if (! $page) {
+        if (!isset($page)) {
             throw new NotFoundHttpException($page.' Not Found');
         }
 

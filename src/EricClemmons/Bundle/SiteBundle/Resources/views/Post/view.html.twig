@@ -1,0 +1,17 @@
+{% extends 'EricClemmonsSiteBundle::layout.html.twig' %}
+
+
+{% block title %}
+{{ post.title }}
+{% endblock title %}
+
+{% block date %}
+{{ post.dateCreated | date('F jS, Y') }}
+{% endblock date %}
+
+
+{% block content %}
+    <article>
+        {{ post.content | raw }}
+    </article>
+{% endblock content %}

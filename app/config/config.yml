@@ -11,7 +11,7 @@ framework:
     templating:      { engines: ['twig'], assets_version:  %version% }
     default_locale:  %locale%
     session:
-        auto_start:     true
+        auto_start:  false
 
 # Twig Configuration
 twig:
