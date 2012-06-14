@@ -6,7 +6,6 @@ $staticDir      = $appDir.'/cache/prod/static_http_cache';
 $interpreter    = (PHP_OS == 'WINNT') ? 'php.exe' : 'php';
 
 // Build static site
-passthru(sprintf('%s %s/console cache:clear --ansi --env=prod --no-warmup', $interpreter, $appDir));
 passthru(sprintf('%s %s/console static:build --ansi --env=prod', $interpreter, $appDir));
 
 // Git init & commit
