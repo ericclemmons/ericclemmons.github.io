@@ -34,9 +34,20 @@ class BuildCommand extends ContainerAwareCommand
         $this->client   = $this->getContainer()->get('static.client');
         $this->cache    = new StaticHttpCache($cacheKernel);
 
-        $this->dumpAssetic($input, $output);
-        $this->dumpAssets($input, $output);
+        $this->clearCache($input, $output);
+        // $this->dumpAssetic($input, $output);
+        // $this->dumpAssets($input, $output);
         $this->dumpUrls($input, $output);
+    }
+
+    private function clearCache(InputInterface $input, OutputInterface $output)
+    {
+        $command = $this->getApplication()->get('cache:clear');
+
+        $command->run(new ArrayInput(array(
+            'command'        => $command->getName(),
+            '--no-warmup'   => true,
+        )), $output);
     }
 
     private function dumpAssetic(InputInterface $input, OutputInterface $output)
@@ -61,17 +72,36 @@ class BuildCommand extends ContainerAwareCommand
 
     private function dumpUrls(InputInterface $input, OutputInterface $output)
     {
-        $route      = '/';
-        $response   = $this->cache->handle(Request::create($route, 'GET'));
-        $date       = $response->getLastModified() ?: $response->getDate();
+        $visited    = array();
+        $routes     = array('/');
 
-        $output->writeln(sprintf(
-            '<comment>%s</comment> <info>[file+]</info> %s',
-            $date->format('H:i:s'),
-            $route
-        ));
+        do {
+            // Get next route
+            $route      = array_shift($routes);
 
-        $crawler    = $this->client->request('GET', $route);
-        // var_dump($crawler->filter('a')->extract('href'));
+            // Track cached route
+            $visited[]  = $route;
+
+            // Crawl cached route for more internal links
+            $crawler    = $this->client->request('GET', $route);
+            $hrefs      = array_filter($crawler->filter('a')->extract('href'));
+            $internal   = array_filter($hrefs, function($href) {
+                return substr($href, 0, 4) !== 'http';
+            });
+
+            // Add internal links onto stack of routes
+            $routes     += array_diff($internal, $visited, $routes);
+        } while ($routes);
+
+        foreach ($visited as $route) {
+            $response   = $this->cache->handle(Request::create($route, 'GET'));
+            $date       = $response->getLastModified() ?: $response->getDate() ?: new \DateTime();
+
+            $output->writeln(sprintf(
+                '<comment>%s</comment> <info>[file+]</info> %s',
+                $date->format('H:i:s'),
+                $route
+            ));
+        }
     }
 }

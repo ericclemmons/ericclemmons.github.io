@@ -17,9 +17,9 @@ class StaticHttpCache extends HttpCache
      */
     public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
     {
-        $response   = $this->invalidate($request, $catch);
+        $response = $this->invalidate($request, $catch);
 
-        $this->store($request, $response);
+        $this->getStore()->write($request, $response);
 
         $response->prepare($request);
 

@@ -14,6 +14,8 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        $posts = $this->get('static.post_repository')->findAll();
+
+        return array('posts' => $posts);
     }
 }

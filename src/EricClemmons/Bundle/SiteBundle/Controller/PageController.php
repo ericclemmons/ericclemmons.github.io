@@ -10,7 +10,18 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class PageController extends Controller
 {
     /**
-     * @Route("/page/:page")
+     * @Route("/{category}", requirements={"category" = "!posts"})
+     * @Template()
+     */
+    public function pagesAction($category)
+    {
+        $pages = $this->get('static.page_repository')->findByCategory($category);
+
+        return array('pages' => $pages);
+    }
+
+    /**
+     * @Route("/page/{page}")
      * @Template()
      */
     public function viewAction($page)

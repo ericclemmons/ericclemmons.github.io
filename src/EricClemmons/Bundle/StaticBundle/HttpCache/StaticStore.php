@@ -93,7 +93,9 @@ class StaticStore implements StoreInterface
      */
     private function getCacheKey(Request $request)
     {
-        return substr($request->getPathInfo(), 1).'index.html';
+        $path = substr($request->getPathInfo(), 1);
+
+        return $path.'/index.html';
     }
 
     /**

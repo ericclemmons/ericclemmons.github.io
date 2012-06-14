@@ -21,7 +21,7 @@ several [open-source projects][gh], including [Symfony2][1] & [Doctrine2][2].
 - [Facebook][fb]
 
 
-[1]: github.com/symfony/symfony
+[1]: https://github.com/symfony/symfony
 [2]: https://github.com/doctrine/doctrine2
 
 [in]: http://www.linkedin.com/in/ericclemmons "Eric Clemmons' LinkedIn Profile"
