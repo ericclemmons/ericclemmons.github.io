@@ -9,8 +9,17 @@ Vagrant::Config.run do |config|
   # Remount the default shared folder as NFS for caching & speed
   config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true)
 
+  # Mount local SSH keys for deployments
+  config.vm.share_folder('ssh', "/home/vagrant/.ssh", File.expand_path("~/.ssh"))
+
   # Setup the Site
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe("assetic")
+  end
+
+  # Setup Git
+  gitconfig = `cat ~/.gitconfig`
+  config.vm.provision :shell do |shell|
+    shell.inline = "cat > /home/vagrant/.gitconfig << CONFIG\n#{gitconfig}\nCONFIG\n"
   end
 end
