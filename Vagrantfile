@@ -15,6 +15,7 @@ Vagrant::Config.run do |config|
   # Setup the Site
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe("assetic")
+    chef.add_recipe("ericclemmons")
   end
 
   # Setup Git
