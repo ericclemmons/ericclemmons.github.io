@@ -35,8 +35,8 @@ class BuildCommand extends ContainerAwareCommand
         $this->cache    = new StaticHttpCache($cacheKernel);
 
         $this->clearCache($input, $output);
-        // $this->dumpAssetic($input, $output);
-        // $this->dumpAssets($input, $output);
+        $this->dumpAssetic($input, $output);
+        $this->dumpAssets($input, $output);
         $this->dumpUrls($input, $output);
     }
 
