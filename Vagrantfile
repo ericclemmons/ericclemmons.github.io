@@ -1,26 +1,26 @@
 Vagrant::Config.run do |config|
-  config.vm.box       = "zend-server"
-  config.vm.box_url   = "../../CMN/boxes/zend-server/package.box"
+  # Vagrant box config (Ubuntu 10.04)
+  config.vm.box       = "lucid32"
+  config.vm.box_url   = "http://files.vagrantup.com/lucid32.box"
   config.vm.host_name = "ericclemmons.github.com"
+  config.vm.forward_port 80, 8080, :auto => true
 
-  # Dedicated IP to avoid conflicts (and no port fowarding!)
-  config.vm.network :hostonly, "33.33.33.2"
-
-  # Remount the default shared folder as NFS for caching & speed
-  config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true)
-
-  # Mount local SSH keys for deployments
+  # Mount local SSH keys (required for publishing)
   config.vm.share_folder('ssh', "/home/vagrant/.ssh", File.expand_path("~/.ssh"))
 
-  # Setup the Site
-  config.vm.provision :chef_solo do |chef|
-    chef.add_recipe("assetic")
-    chef.add_recipe("ericclemmons")
-  end
-
-  # Setup Git
+  # Copy over client's .gitconfig (required for publishing)
   gitconfig = `cat ~/.gitconfig`
   config.vm.provision :shell do |shell|
     shell.inline = "cat > /home/vagrant/.gitconfig << CONFIG\n#{gitconfig}\nCONFIG\n"
+  end
+
+  # Setup the VM
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = "vendor/cmn/cookbooks"
+
+    chef.add_recipe("base")
+    chef.add_recipe("zend")
+    chef.add_recipe("java")
+    chef.add_recipe("assetic")
   end
 end

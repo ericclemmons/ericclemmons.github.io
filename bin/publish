@@ -5,6 +5,9 @@ $appDir         = realpath(__DIR__ . '/../app');
 $staticDir      = $appDir.'/cache/prod/static_http_cache';
 $interpreter    = (PHP_OS == 'WINNT') ? 'php.exe' : 'php';
 
+// Clear cache
+passthru(sprintf('%s %s/console cache:clear --ansi --env=prod --no-warmup', $interpreter, $appDir));
+
 // Build static site
 passthru(sprintf('%s %s/console static:build --ansi --env=prod', $interpreter, $appDir));
 

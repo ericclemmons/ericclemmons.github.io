@@ -7,17 +7,17 @@
     "require": {
         "php": ">=5.3.2",
         "symfony/symfony": "2.1.*",
-        "doctrine/orm": "2.2.*",
-        "doctrine/doctrine-bundle": "dev-master",
+        "symfony/twig-bundle": "dev-master",
         "twig/extensions": "dev-master",
         "symfony/assetic-bundle": "dev-master",
+        "leafo/lessphp": "dev-master",
         "symfony/swiftmailer-bundle": "dev-master",
         "symfony/monolog-bundle": "dev-master",
         "sensio/distribution-bundle": "dev-master",
         "sensio/framework-extra-bundle": "dev-master",
-        "sensio/generator-bundle": "dev-master",
         "twitter/bootstrap": "master",
-        "knplabs/knp-markdown-bundle": "dev-master"
+        "knplabs/knp-markdown-bundle": "dev-master",
+        "cmn/cookbooks": "dev-master"
     },
     "repositories": [
         {
@@ -32,6 +32,22 @@
                 },
                 "dist": {
                     "url": "https://github.com/twitter/bootstrap/zipball/master",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "version": "master",
+                "name": "cmn/cookbooks",
+                "source": {
+                    "url": "https://github.com/CMN/cookbooks.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "dist": {
+                    "url": "https://github.com/CMN/cookbooks/zipball/master",
                     "type": "zip"
                 }
             }
