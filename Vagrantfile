@@ -18,8 +18,11 @@ Vagrant::Config.run do |config|
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "vendor/cmn/cookbooks"
 
+    # LAMP stack
     chef.add_recipe("base")
-    chef.add_recipe("zend")
+    chef.add_recipe("zend-server")
+
+    # App stack
     chef.add_recipe("java")
     chef.add_recipe("assetic")
   end

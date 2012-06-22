@@ -37,20 +37,8 @@
             }
         },
         {
-            "type": "package",
-            "package": {
-                "version": "master",
-                "name": "cmn/cookbooks",
-                "source": {
-                    "url": "https://github.com/CMN/cookbooks.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "dist": {
-                    "url": "https://github.com/CMN/cookbooks/zipball/master",
-                    "type": "zip"
-                }
-            }
+            "type": "vcs",
+            "url": "https://github.com/CMN/cookbooks"
         }
     ],
     "scripts": {

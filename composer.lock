@@ -1,10 +1,10 @@
 {
-    "hash": "a60fa52750a79a34d2d8e845ac4533ce",
+    "hash": "8baec3ed23a9539927b24f796fbad7e0",
     "packages": [
         {
             "package": "cmn/cookbooks",
-            "version": "master",
-            "source-reference": "master"
+            "version": "dev-master",
+            "source-reference": "c3e6302a306fd5f5cd5cb8eba601c041d3cbe703"
         },
         {
             "package": "doctrine/common",
@@ -36,7 +36,7 @@
         {
             "package": "leafo/lessphp",
             "version": "dev-master",
-            "source-reference": "v0.3.5"
+            "source-reference": "85487a83381ae292e8bba1c699eb4af31d87eb9e"
         },
         {
             "package": "monolog/monolog",
@@ -45,7 +45,7 @@
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "49c8d2be953d34155fc72c4a416e12bd0ce6e98f"
+            "source-reference": "a360ad61fe34206a7295c1ef00b5455b2b2e1071"
         },
         {
             "package": "sensio/framework-extra-bundle",
@@ -61,22 +61,17 @@
         {
             "package": "swiftmailer/swiftmailer",
             "version": "dev-master",
-            "source-reference": "0509c682d482940949ea7f7128c582d9d8b628e2"
+            "source-reference": "d57ffdeed664d6061cef0047e1f5d3fc3ee3fb99"
         },
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "ca447e29f8ee2d38643f2f3a9faae1164aa708fb"
+            "source-reference": "8fe7b898b08103c1d6fce64c3e279a7afd61adfc"
         },
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
             "source-reference": "0b5046d3d1ef93cd59ceabfa37de2665f5118c7f"
-        },
-        {
-            "package": "symfony/swiftmailer-bridge",
-            "version": "dev-master",
-            "source-reference": "408eb09f5799d393ddc3d916ec3667857fb3a20d"
         },
         {
             "package": "symfony/swiftmailer-bundle",
@@ -92,7 +87,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "092b5dde62df60c268c8d99bd5d45d50cda42acc"
+            "source-reference": "v2.1.0-BETA1"
         },
         {
             "package": "twig/extensions",
