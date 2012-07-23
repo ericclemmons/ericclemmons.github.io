@@ -19,4 +19,16 @@ class Post extends File
     {
         return substr($this->getBasename(), 11, -3);
     }
+
+    public function getUrl($absolute = false)
+    {
+        $date   = $this->getDateCreated();
+        $url    = $this->router->generate('ericclemmons_site_post_view', array(
+            'year'  => $date->format('Y'),
+            'month' => $date->format('m'),
+            'slug'  => $this->getSlug(),
+        ), $absolute);
+
+        return $url;
+    }
 }

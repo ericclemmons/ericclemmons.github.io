@@ -3,6 +3,7 @@
 namespace EricClemmons\Bundle\StaticBundle\Repository;
 
 use Knp\Bundle\MarkdownBundle\Parser\MarkdownParser;
+use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\Yaml\Yaml;
@@ -19,9 +20,13 @@ abstract class Repository
      */
     protected $parser;
 
+    /**
+     * @var Router router to generate URLs for individual files
+     */
+
     abstract protected function getEntityClass();
 
-    public function __construct($path, MarkdownParser $parser)
+    public function __construct($path, MarkdownParser $parser, Router $router)
     {
         if (! is_dir($path)) {
             throw new \InvalidArgumentException('Path does not exist: '.$path);
@@ -29,6 +34,7 @@ abstract class Repository
 
         $this->path     = $path;
         $this->parser   = $parser;
+        $this->router   = $router;
     }
 
     /**
@@ -102,6 +108,8 @@ abstract class Repository
         $class      = $this->getEntityClass();
         $entity     = new $class($file, $file->getRelativePath(), $file->getRelativePathName());
         $source     = file_get_contents($file->getRealPath());
+
+        $entity->setRouter($this->router);
 
         preg_match('/^(?:---(.+?)---)?(.+)$/sum', $source, $matches);
 

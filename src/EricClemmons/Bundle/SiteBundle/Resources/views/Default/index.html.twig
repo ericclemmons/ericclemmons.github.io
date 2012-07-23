@@ -2,17 +2,21 @@
 
 
 {% block content %}
+<h2>Posts</h2>
+
+<ol>
 {% for post in posts %}
-    <article>
-        <h3>
-            <a href="{{ path('ericclemmons_site_post_view', { 'post': post.slug }) }}">
-                {{ post.title }}
+    <li>
+        <strong>
+            <a href="{{ post.url }}" title="post.title">
+                {{- post.title -}}
             </a>
-        </h3>
+        </strong>
 
         <date>
-            {{ post.dateCreated | date('F jS, Y') }}
+            {{- post.dateCreated | date('F jS, Y') -}}
         </date>
-    </article>
+    </li>
 {% endfor %}
+</ol>
 {% endblock content %}

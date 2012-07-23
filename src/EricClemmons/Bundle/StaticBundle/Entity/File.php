@@ -3,6 +3,7 @@
 namespace EricClemmons\Bundle\StaticBundle\Entity;
 
 use Knp\Bundle\MarkdownBundle\Parser\MarkdownParser;
+use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\Finder\SplFileInfo;
 
 abstract class File extends SplFileInfo
@@ -12,6 +13,8 @@ abstract class File extends SplFileInfo
     protected $meta;
 
     protected $rawContent;
+
+    protected $router;
 
     protected $source;
 
@@ -50,10 +53,12 @@ abstract class File extends SplFileInfo
         return $this->rawContent;
     }
 
-    public function getSlug()
+    public function getRouter()
     {
-        return basename($this->getBasename(), '.md');
+        return $this->router;
     }
+
+    abstract function getSlug();
 
     public function getSource()
     {
@@ -64,6 +69,8 @@ abstract class File extends SplFileInfo
     {
         return $this->getMeta('title');
     }
+
+    abstract public function getUrl($absolute = false);
 
     /**
      * Init hook for any post-processing needed by the entity when instantiated
@@ -90,6 +97,11 @@ abstract class File extends SplFileInfo
         $this->rawContent = $rawContent;
 
         return $this;
+    }
+
+    public function setRouter(Router $router)
+    {
+        $this->router = $router;
     }
 
     public function setSource($source)

@@ -47,7 +47,7 @@
                     <h1>Eric Clemmons</h1>
 
                     <aside>
-                        {% render 'EricClemmonsSiteBundle:Page:view' with { 'page': 'about'} %}
+                        {% render 'EricClemmonsSiteBundle:Page:view' with { 'slug': 'about'} %}
                     </aside>
                 </header>
 
@@ -66,7 +66,7 @@
 
             <section id="content">
                 <h1>
-                    {{ block('title') }}
+                    {{- block('title') -}}
 
                     {% if block('date') %}
                     <small class="pull-right">

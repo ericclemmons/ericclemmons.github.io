@@ -21,12 +21,12 @@ class PostController extends Controller
     }
 
     /**
-     * @Route("/post/{post}")
+     * @Route("/post/{year}/{month}/{slug}")
      * @Template()
      */
-    public function viewAction($post)
+    public function viewAction($slug)
     {
-        $post = $this->get('static.post_repository')->find($post);
+        $post = $this->get('static.post_repository')->find($slug);
 
         if (!isset($post)) {
             throw new NotFoundHttpException($post.' Not Found');

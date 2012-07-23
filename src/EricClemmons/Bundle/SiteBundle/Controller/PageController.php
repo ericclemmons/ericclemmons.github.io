@@ -21,12 +21,12 @@ class PageController extends Controller
     }
 
     /**
-     * @Route("/page/{page}")
+     * @Route("/page/{slug}")
      * @Template()
      */
-    public function viewAction($page)
+    public function viewAction($slug)
     {
-        $page = $this->get('static.page_repository')->find($page);
+        $page = $this->get('static.page_repository')->find($slug);
 
         if (!isset($page)) {
             throw new NotFoundHttpException($page.' Not Found');

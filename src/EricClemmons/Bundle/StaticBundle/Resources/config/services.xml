@@ -19,11 +19,13 @@
         <service id="static.post_repository" class="%static.post_repository.class%">
             <argument>%kernel.root_dir%/Resources/content/posts</argument>
             <argument type="service" id="markdown.parser" />
+            <argument type="service" id="router" />
         </service>
 
         <service id="static.page_repository" class="%static.page_repository.class%">
             <argument>%kernel.root_dir%/Resources/content/pages</argument>
             <argument type="service" id="markdown.parser" />
+            <argument type="service" id="router" />
         </service>
 
         <!-- Static Client -->
