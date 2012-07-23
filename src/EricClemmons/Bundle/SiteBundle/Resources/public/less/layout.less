@@ -2,6 +2,13 @@
 @import "../bootstrap/less/mixins.less";
 @import url("http://fonts.googleapis.com/css?family=Merriweather:300,700");
 
+.background-cover {
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+}
+
 .makeColumn(@columns: 1, @offset: 0) {
     float: left;
     margin-left: (@gridColumnWidth * @offset) + (@gridGutterWidth * (@offset - 1)) + (@gridGutterWidth * 2);
@@ -9,10 +16,48 @@
     padding: (@gridColumnWidth);
 }
 
-h1, h2, h3, h4 { font-weight: 300; }
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    background: #9aabc4 url("../images/sands-of-time.jpg") no-repeat center center fixed;
+    .background-cover;
+}
+
+body {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+hr {
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+h1, h2, h3, h4 {
+    font-weight: 300;
+
+    color: @headingsColor;
+    text-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.33);
+
+    small {
+        color: #666;
+    }
+}
+
+strong {
+    font-weight: 300;
+}
 
 h1 {
     padding-bottom: @gridColumnWidth;
+}
+
+h2 {
+    margin-bottom: @baseLineHeight;
+    color: #fff;
 }
 
 body, p {
@@ -21,10 +66,6 @@ body, p {
 
 ul {
     list-style-type: circle;
-}
-
-strong {
-    font-weight: 700;
 }
 
 img {
@@ -37,7 +78,16 @@ img {
     margin: 0;
     position: fixed;
     height: 100%;
-    border-right: 1px solid @grayLighter;
+    background: rgba(0, 0, 0, 0.8);
+    color: #efe9e7;
+
+    a {
+        color: #9aabc4;
+
+        &:hover {
+            color: #d2d8e8;
+        }
+    }
 
     header {
         h1 {
@@ -71,17 +121,49 @@ img {
     padding: (@gridColumnWidth);
     min-width: @gridColumnWidth * 4;
 
-    article {
+    article, ul, ol {
         .clearfix();
 
-        h3 {
-            float: left;
-        }
+        background: #fff;
+        padding: (@gridGutterWidth * 2);
+        border-radius: (@gridGutterWidth / 4);
+        box-shadow: 0 (@gridGutterWidth / 3) @gridGutterWidth rgba(0, 0, 0, 0.25);
 
         date {
             float: right;
-            line-height: 36px;
             font-style: italic;
+        }
+
+        strong {
+            float: left;
+            font-size: 18px;
+            line-height: @baseLineHeight * 1.5;
+
+            small {
+                font-size: 14px;
+            }
+        }
+    }
+
+    article {
+        date {
+            line-height: 36px;
+        }
+    }
+
+    & > ol,
+    & > ul {
+        margin-left: 0;
+        margin-right: 0;
+
+        date {
+            line-height: 27px;
+        }
+
+        li {
+            .clearfix();
+
+            list-style-type: none;
         }
     }
 }
@@ -89,4 +171,5 @@ img {
 #footer {
     position: absolute;
     bottom: @gridColumnWidth * 2;
+    opacity: 0.8;
 }
