@@ -2,7 +2,7 @@
 title: Another Article
 ---
 
-## What's up?
+# What's up?
 
 
     howdy

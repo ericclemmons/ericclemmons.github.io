@@ -4,6 +4,7 @@ title: About Me
 
 ---
 
+
 ![Eric Clemmons' Profile Picture](http://www.gravatar.com/avatar/b6ffb4f3fe821e31f69923630dfdebc5.png?s=100)
 
 **Howdy**!
@@ -12,6 +13,7 @@ UX best-practices and coordinating complex projects.
 
 I'm the [VP, Software Development][in] @ [CMN.com][cmn] and a contributor to
 several [open-source projects][gh], including [Symfony2][1] & [Doctrine2][2].
+
 
 ---
 
