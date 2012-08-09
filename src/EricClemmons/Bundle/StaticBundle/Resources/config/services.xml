@@ -5,6 +5,7 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
+        <parameter key="static.markdown.parser.class">EricClemmons\Bundle\StaticBundle\Parser\MarkdownParser</parameter>
         <parameter key="static.post_repository.class">EricClemmons\Bundle\StaticBundle\Repository\PostRepository</parameter>
         <parameter key="static.page_repository.class">EricClemmons\Bundle\StaticBundle\Repository\PageRepository</parameter>
         <parameter key="static.client.class">Symfony\Bundle\FrameworkBundle\Client</parameter>
@@ -15,16 +16,19 @@
     </parameters>
 
     <services>
+        <!-- Parser -->
+        <service id="static.markdown.parser" class="%static.markdown.parser.class%" />
+
         <!-- Repositories -->
         <service id="static.post_repository" class="%static.post_repository.class%">
             <argument>%kernel.root_dir%/Resources/content/posts</argument>
-            <argument type="service" id="markdown.parser" />
+            <argument type="service" id="static.markdown.parser" />
             <argument type="service" id="router" />
         </service>
 
         <service id="static.page_repository" class="%static.page_repository.class%">
             <argument>%kernel.root_dir%/Resources/content/pages</argument>
-            <argument type="service" id="markdown.parser" />
+            <argument type="service" id="static.markdown.parser" />
             <argument type="service" id="router" />
         </service>
 
