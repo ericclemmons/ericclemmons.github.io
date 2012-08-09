@@ -67,7 +67,7 @@ abstract class File extends SplFileInfo
 
     public function getTitle()
     {
-        return $this->getMeta('title');
+        return $this->getMeta('title') ?: $this->parseTitle() ?: ucwords(str_replace('-', ' ', $this->getSlug()));
     }
 
     abstract public function getUrl($absolute = false);
@@ -77,6 +77,13 @@ abstract class File extends SplFileInfo
      */
     public function init()
     {}
+
+    public function parseTitle()
+    {
+        if (preg_match('/^#\s(.*)$/m', $this->getRawContent(), $titles)) {
+            return end($titles);
+        }
+    }
 
     public function setContent($content)
     {

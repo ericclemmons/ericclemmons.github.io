@@ -122,7 +122,7 @@ abstract class Repository
             $entity->setSource($source);
             $entity->setMeta($meta);
             $entity->setContent($content);
-            $entity->setRawContent($content);
+            $entity->setRawContent($rawContent);
         }
 
         $entity->init();
