@@ -10,7 +10,7 @@ Posts
 {% for post in posts %}
     <article>
         <h3>
-            <a href="{{ path('ericclemmons_site_post_view', { 'post': post.slug }) }}">
+            <a href="{{ post.url }}">
                 {{ post.title }}
             </a>
         </h3>
