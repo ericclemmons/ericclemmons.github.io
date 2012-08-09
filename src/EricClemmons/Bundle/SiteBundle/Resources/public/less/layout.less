@@ -20,15 +20,12 @@ html,
 body {
     width: 100%;
     height: 100%;
+    background: transparent;
 }
 
 html {
     background: #9aabc4 url("../images/sands-of-time.jpg") no-repeat center center fixed;
     .background-cover;
-}
-
-body {
-    background: rgba(255, 255, 255, 0.25);
 }
 
 hr {
@@ -40,24 +37,18 @@ h1, h2, h3, h4 {
     font-weight: 300;
 
     color: @headingsColor;
-    text-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.33);
 
     small {
         color: #666;
+    }
+
+    code {
+        font-size: inherit;
     }
 }
 
 strong {
     font-weight: 300;
-}
-
-h1 {
-    padding-bottom: @gridColumnWidth;
-}
-
-h2 {
-    margin-bottom: @baseLineHeight;
-    color: #fff;
 }
 
 body, p {
@@ -71,6 +62,16 @@ ul {
 img {
     border-radius: 5px;
 }
+
+pre {
+    margin: (@baseLineHeight) 0;
+}
+
+#container {
+    background: rgba(255, 255, 255, 0.25);
+    min-height: 100%;
+}
+
 
 #sidebar {
     .makeColumn(3);
@@ -121,7 +122,17 @@ img {
     padding: (@gridColumnWidth);
     min-width: @gridColumnWidth * 4;
 
-    article, ul, ol {
+    & > h1 {
+        padding-bottom: @gridColumnWidth;
+    }
+
+    & > h2 {
+        color: #fff;
+    }
+
+    & > article,
+    & > ul,
+    & > ol {
         .clearfix();
 
         background: #fff;
@@ -146,8 +157,21 @@ img {
     }
 
     article {
+        h1 {
+            display: none;
+        }
+
+        h2, h3 {
+            margin: @baseLineHeight 0;
+        }
+
         date {
             line-height: 36px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
         }
     }
 
