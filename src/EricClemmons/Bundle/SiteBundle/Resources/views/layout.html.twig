@@ -18,20 +18,20 @@
         {% endblock head_title %}
 
         {% block head_stylesheets -%}
-        {% block stylesheets -%}
-        {% stylesheets filter='less,cssrewrite,?yui_css'
-            "bundles/ericclemmonssite/bootstrap/less/bootstrap.less"
-            "bundles/ericclemmonssite/less/layout.less"
-        -%}
-            <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
-        {% endstylesheets %}
-        {% endblock stylesheets %}
+            {% block stylesheets -%}
+            {% stylesheets filter='less,cssrewrite,?yui_css' output='cache/*.css'
+                "bundles/ericclemmonssite/bootstrap/less/bootstrap.less"
+                "bundles/ericclemmonssite/less/layout.less"
+                "bundles/ericclemmonssite/prettify/prettify.css"
+            -%}
+                <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+            {% endstylesheets %}
+            {% endblock stylesheets %}
+        {% endblock head_stylesheets %}
 
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        {% endblock head_stylesheets %}
-
     </head>
     {% endblock head %}
 
@@ -82,26 +82,17 @@
         {% endblock container %}
 
         {% block javascripts -%}
-        {%- javascripts
+        {%- javascripts filter="?yui_js" output='cache/*.js'
           'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
-          '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-transition.js'
-          '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-modal.js'
-          '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-dropdown.js'
-          '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-scrollspy.js'
-          '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-tab.js'
-          '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-tooltip.js'
-          '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-popover.js'
-          '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-alert.js'
-          '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-button.js'
-          '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-collapse.js'
-          '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-carousel.js'
-          '@EricClemmonsSiteBundle/Resources/public/bootstrap/js/bootstrap-typeahead.js'
-          filter="?yui_js"
+          '@EricClemmonsSiteBundle/Resources/public/prettify/prettify.js'
         -%}
           <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
         {% endblock javascripts %}
 
+        <script type="text/javascript">
+            prettyPrint();
+        </script>
     </body>
     {% endblock body %}
 
