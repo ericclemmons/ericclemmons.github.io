@@ -21,7 +21,7 @@ class PostController extends Controller
     }
 
     /**
-     * @Route("/post/{year}/{month}/{slug}")
+     * @Route("/{year}/{month}/{slug}")
      * @Template()
      */
     public function viewAction($slug)
