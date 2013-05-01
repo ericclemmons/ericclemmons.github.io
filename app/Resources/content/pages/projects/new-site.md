@@ -1,8 +1,0 @@
----
-
-title: New Site
-
----
-
-
-Howdy
