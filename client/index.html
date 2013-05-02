@@ -5,16 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>Genesis Skeleton</title>
+    <title>Eric Clemmons</title>
 
     <meta http-equiv="X-UA-Compatible"  content="IE=edge,chrome=1">
     <meta name="viewport"               content="width=device-width, initial-scale=1.0">
     <meta name="description"            content="Modern application skeleton - HTML5 Boilerplate + Angular + Express + Grunt + LiveReload + Bootstrap + Bower">
     <meta name="author"                 content="Eric Clemmons">
 
-    <link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
-
     <!-- build:css app/styles/app.min.css -->
+    <link rel="stylesheet" href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css">
     <link rel="stylesheet" href="app/styles/app.css">
     <!-- endbuild -->
 
@@ -28,35 +27,66 @@
     <![endif]-->
 
     <div class="container-fluid">
-      <header class="masthead">
+      <header class="span12">
         <h3>
-          <a href="http://genesis-skeleton.com/" class="muted">Genesis Skeleton</a> <small>v{{ version }}</small>
+          <a href="/" class="muted">Eric Clemmons</a>
         </h3>
       </header>
-
-      <hr>
-
-      <noscript>
-        Please enable Javascript to experience this site :)
-      </noscript>
-
-      <div ng-view></div>
-
-      <hr>
-
-      <footer class="muted text-center">
-        &copy; 2013 Genesis Skeleton
-      </footer>
     </div>
+
+    <hr>
+
+    <div class="container-fluid">
+      <section class="media">
+        <p class="pull-left">
+          <img src="http://www.gravatar.com/avatar/b6ffb4f3fe821e31f69923630dfdebc5.png?s=100" alt="Eric Clemmons' Profile Picture" class="img-polaroid">
+        </p>
+
+        <p>
+          <strong>Howdy</strong>!
+          I'm a Father &amp; Husband from Houston, TX who enjoys development architecture,
+          UX best-practices and coordinating complex projects.
+        </p>
+
+        <p>I'm the <a href="http://www.linkedin.com/in/ericclemmons" title="Eric Clemmons' LinkedIn Profile">VP, Software Development</a> @ <a href="http://www.cmn.com/about-us/" title="CMN Website">CMN.com</a> and a contributor to
+        several <a href="https://github.com/ericclemmons" title="Eric Clemmons' Github Profile">open-source projects</a>, including <a href="https://github.com/symfony/symfony">Symfony2</a> &amp; <a href="https://github.com/doctrine/doctrine2">Doctrine2</a>.</p>
+
+        <ul class="nav nav-pills">
+          <li><a href="http://www.twitter.com/ericclemmons" title="Eric Clemmons' Twitter">Twitter</a></li>
+          <li><a href="https://github.com/ericclemmons" title="Eric Clemmons' Github Profile">Github</a></li>
+          <li><a href="http://www.linkedin.com/in/ericclemmons" title="Eric Clemmons' LinkedIn Profile">LinkedIn</a></li>
+          <li><a href="http://www.facebook.com/ericclemmons" title="Eric Clemmons' Facebook Profile">Facebook</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <hr>
+
+    <noscript>
+      Please enable Javascript to experience this site :)
+    </noscript>
+
+    <div ng-view></div>
+
+    <hr>
+
+    <footer class="muted text-center">
+      &copy; 2013 Eric Clemmons
+    </footer>
 
     <!-- build:js app/scripts/all.min.js -->
     <script src="components/angular/angular.js"></script>
+    <script src="components/angular-slugify/angular-slugify.js"></script>
     <script src="components/modernizr/modernizr.js"></script>
+    <script src="components/google-code-prettify/src/prettify.js"></script>
+    <script src="components/marked/lib/marked.js"></script>
 
     <script src="app/scripts/app.js"></script>
-    <script src="app/scripts/controllers/home.js"></script>
-    <script src="app/scripts/services/api.js"></script>
     <script src="app/scripts/app.templates.js"></script>
+    <script src="app/scripts/controllers/article.js"></script>
+    <script src="app/scripts/controllers/home.js"></script>
+    <script src="app/scripts/directives/markdown.js"></script>
+    <script src="app/scripts/services/github.js"></script>
     <!-- endbuild -->
 
     <script>

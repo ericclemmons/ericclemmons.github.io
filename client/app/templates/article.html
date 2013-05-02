@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <h2>{{ article.title }}</h2>
+
+  <article app-markdown ng-model="article.body"></article>
+
+  <dl>
+    <div ng-repeat="comment in comments">
+      <dt>{{ user.login }}</dt>
+      <dd app-markdown ng-model="comment.body"></dd>
+    </div>
+  </dl>
+</div>
