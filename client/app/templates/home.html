@@ -1,9 +1,44 @@
-<div class="container-fluid">
-  <h2>Articles</h2>
-
-  <section ng-repeat="article in articles">
-    <h3>
-      <a ng-href="#!/article/{{ article.number }}/{{ article.title | slugify }}">{{ article.title }}</a>
-    </h3>
-  </section>
+<div ng-repeat="article in articles" class="corgi_feed_well">
+  <div class="individual_feed_item">
+    <div class="feed_item">
+      <div class="feed_body">
+        <div class="row">
+          <div class="feed_profile_pic">
+            <div class="postdate">
+              <div class="month m-{{ article.updated_at | date:'MM' }}">
+                {{ article.updated_at | date:'MMM' }}
+              </div>
+              <div class="day d-{{ article.updated_at | date:'dd' }}">
+                {{ article.updated_at | date:'dd' }}
+              </div>
+              <div class="year y-{{ article.updated_at | date:'yyyy' }}">
+                {{ article.updated_at | date:'yyyy' }}
+              </div>
+            </div>
+          </div>
+          <div class="feed_text">
+            <p>
+              <a ng-href="#!/article/{{ article.number }}/{{ article.title | slugify }}">{{ article.title }}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="comment_area">
+        <p>Add a comment</p>
+        <form>
+          <textarea></textarea>
+        </form>
+      </div>
+      <hr class="feed_hr">
+      <div class="bottom_meta">
+        <div class="row">
+          <div class="bottom_right">
+            <a ng-pluralize count="article.comments" when="{ '0': 'Comment', 'one': '1 Comment', 'other': '{} Comments' }"></a>
+            <span>|</span>
+            2 days ago
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

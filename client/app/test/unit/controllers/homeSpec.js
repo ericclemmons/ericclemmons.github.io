@@ -4,10 +4,6 @@ describe('homeController', function() {
 
   // Initialize `app` module + mock `apiService`
   beforeEach(module('app', function($provide) {
-    $provide.value('apiService', {
-      server: { then: function() {} },
-      client: { then: function() {} }
-    });
   }));
 
   // Store `$scope` and `homeController` locally
@@ -23,7 +19,5 @@ describe('homeController', function() {
 
   // Test `$scope` properties
   it('should set $scope.client & $scope.server', function() {
-    expect($scope.client).toBeDefined();
-    expect($scope.server).toBeDefined();
   });
 });

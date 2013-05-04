@@ -13,8 +13,12 @@
     <meta name="author"                 content="Eric Clemmons">
 
     <!-- build:css app/styles/app.min.css -->
+    <link rel="stylesheet" href="components/corgi-bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="components/corgi-bootstrap/css/corgi.css">
+    <link rel="stylesheet" href="components/corgi-bootstrap/css/elusive-webfont.css">
     <link rel="stylesheet" href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css">
     <link rel="stylesheet" href="app/styles/app.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
 
     <!--[if lt IE 9]>
@@ -26,52 +30,46 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container-fluid">
-      <header class="span12">
-        <h3>
-          <a href="/" class="muted">Eric Clemmons</a>
-        </h3>
-      </header>
+    <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#!/">Eric Clemmons</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+              <li><a href="#">Github</a></li>
+              <li><a href="#contact">Twitter</a></li>
+              <li><a href="#contact">LinkedIn</a></li>
+              <li><a href="#about">Facebook</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="span8" ng-view>
+          <noscript>
+            Please enable Javascript to experience this site :)
+          </noscript>
+        </div>
 
-    <div class="container-fluid">
-      <section class="media">
-        <p class="pull-left">
-          <img src="http://www.gravatar.com/avatar/b6ffb4f3fe821e31f69923630dfdebc5.png?s=100" alt="Eric Clemmons' Profile Picture" class="img-polaroid">
-        </p>
-
-        <p>
-          <strong>Howdy</strong>!
-          I'm a Father &amp; Husband from Houston, TX who enjoys development architecture,
-          UX best-practices and coordinating complex projects.
-        </p>
-
-        <p>I'm the <a href="http://www.linkedin.com/in/ericclemmons" title="Eric Clemmons' LinkedIn Profile">VP, Software Development</a> @ <a href="http://www.cmn.com/about-us/" title="CMN Website">CMN.com</a> and a contributor to
-        several <a href="https://github.com/ericclemmons" title="Eric Clemmons' Github Profile">open-source projects</a>, including <a href="https://github.com/symfony/symfony">Symfony2</a> &amp; <a href="https://github.com/doctrine/doctrine2">Doctrine2</a>.</p>
-
-        <ul class="nav nav-pills">
-          <li><a href="http://www.twitter.com/ericclemmons" title="Eric Clemmons' Twitter">Twitter</a></li>
-          <li><a href="https://github.com/ericclemmons" title="Eric Clemmons' Github Profile">Github</a></li>
-          <li><a href="http://www.linkedin.com/in/ericclemmons" title="Eric Clemmons' LinkedIn Profile">LinkedIn</a></li>
-          <li><a href="http://www.facebook.com/ericclemmons" title="Eric Clemmons' Facebook Profile">Facebook</a></li>
-        </ul>
-      </section>
+        <div class="span4 corgi_feed_well" ng-include="'app/templates/sidebar.html'"></div>
+      </div>
     </div>
 
-    <hr>
 
-    <noscript>
-      Please enable Javascript to experience this site :)
-    </noscript>
-
-    <div ng-view></div>
-
-    <hr>
-
-    <footer class="muted text-center">
-      &copy; 2013 Eric Clemmons
+    <footer class="corgi_footer">
+      <div class="container">
+        <p class="corgi_copyright">
+          &copy; 2013 Eric Clemmons
+        </p>
+      </div>
     </footer>
 
     <!-- build:js app/scripts/all.min.js -->
