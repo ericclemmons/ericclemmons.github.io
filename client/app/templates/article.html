@@ -1,12 +1,22 @@
-<div class="container-fluid">
-  <h2>{{ article.title }}</h2>
+<h2>{{ article.title }}</h2>
 
-  <article app-markdown ng-model="article.body"></article>
+<hr>
 
-  <dl>
-    <div ng-repeat="comment in comments">
-      <dt>{{ user.login }}</dt>
-      <dd app-markdown ng-model="comment.body"></dd>
+<article ng-bind-html-unsafe="article.body_html"></article>
+
+<hr>
+
+<h3>{{ article.comments }} Comments</h3>
+
+<hr>
+
+<div ng-repeat="comment in comments">
+  <div class="row-fluid">
+    <div class="span2">
+      <img ng-src="{{ comment.user.avatar_url }}" class="img-circle">
     </div>
-  </dl>
+    <div class="span10 well well-small">
+      <aside ng-bind-html-unsafe="comment.body_html"></aside>
+    </div>
+  </div>
 </div>

@@ -5,19 +5,31 @@ angular
     'GITHUB_USER',
     'GITHUB_REPO',
     function($http, user, repo) {
+      this.comments = function(issue) {
+        return this.get(issue.comments_url);
+      };
+
       this.context = function() {
         return user + '/' + repo;
       };
 
       this.issues = function() {
-        var url = 'https://api.github.com/repos/' + this.context() + '/issues';
+        return this.get('https://api.github.com/repos/' + this.context() + '/issues', {
+          params: {
+            state: 'open'
+          }
+        });
+      };
+
+      this.get = function(url, config) {
+        config = angular.extend({
+          headers: {
+            Accept: "application/vnd.github.full+json"
+          }
+        }, config);
 
         return $http
-          .get(url, {
-            params: {
-              state: 'open'
-            }
-          })
+          .get(url, config)
           .then(function(response) {
             return response.data;
           })

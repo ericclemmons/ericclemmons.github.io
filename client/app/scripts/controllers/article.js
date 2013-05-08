@@ -14,12 +14,7 @@ angular
 
         if (issue) {
           $scope.article  = issue;
-          $scope.comments = $http
-            .get(issue.comments_url)
-            .then(function(response) {
-              return response.data;
-            })
-          ;
+          $scope.comments = github.comments(issue);
         }
       });
     }

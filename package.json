@@ -1,8 +1,14 @@
 {
+  "title": "Eric Clemmons' Site",
+  "name": "ericclemmons-site",
+  "description": "Eric Clemmons' Official Site",
+  "version": "0.0.1",
   "author": {
     "name": "Eric Clemmons",
     "email": "eric@smarterspam"
   },
+  "homepage": "https://github.com/ericclemmons/genesis-skeleton",
+  "bugs": "https://github.com/ericclemmons/genesis-skeleton/issues",
   "licenses": [
     {
       "type": "MIT",

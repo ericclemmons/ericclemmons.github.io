@@ -13,12 +13,9 @@
     <meta name="author"                 content="Eric Clemmons">
 
     <!-- build:css app/styles/app.min.css -->
-    <link rel="stylesheet" href="components/corgi-bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="components/corgi-bootstrap/css/corgi.css">
-    <link rel="stylesheet" href="components/corgi-bootstrap/css/elusive-webfont.css">
-    <link rel="stylesheet" href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css">
     <link rel="stylesheet" href="app/styles/app.css">
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
 
     <!--[if lt IE 9]>
@@ -30,60 +27,27 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="navbar navbar-static-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#!/">Eric Clemmons</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav pull-right">
-              <li><a href="#">Github</a></li>
-              <li><a href="#contact">Twitter</a></li>
-              <li><a href="#contact">LinkedIn</a></li>
-              <li><a href="#about">Facebook</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="container">
       <div class="row">
+        <div class="span4" ng-include="'app/templates/header.html'"></div>
+
         <div class="span8" ng-view>
           <noscript>
             Please enable Javascript to experience this site :)
           </noscript>
         </div>
-
-        <div class="span4 corgi_feed_well" ng-include="'app/templates/sidebar.html'"></div>
       </div>
     </div>
-
-
-    <footer class="corgi_footer">
-      <div class="container">
-        <p class="corgi_copyright">
-          &copy; 2013 Eric Clemmons
-        </p>
-      </div>
-    </footer>
 
     <!-- build:js app/scripts/all.min.js -->
     <script src="components/angular/angular.js"></script>
     <script src="components/angular-slugify/angular-slugify.js"></script>
     <script src="components/modernizr/modernizr.js"></script>
-    <script src="components/google-code-prettify/src/prettify.js"></script>
-    <script src="components/marked/lib/marked.js"></script>
 
     <script src="app/scripts/app.js"></script>
     <script src="app/scripts/app.templates.js"></script>
     <script src="app/scripts/controllers/article.js"></script>
     <script src="app/scripts/controllers/home.js"></script>
-    <script src="app/scripts/directives/markdown.js"></script>
     <script src="app/scripts/services/github.js"></script>
     <!-- endbuild -->
 
