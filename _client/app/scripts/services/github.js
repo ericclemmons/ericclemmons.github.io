@@ -16,7 +16,8 @@ angular
       this.issues = function() {
         return this.get('https://api.github.com/repos/' + this.context() + '/issues', {
           params: {
-            state: 'open'
+            labels: 'published',
+            state:  'open'
           }
         });
       };
