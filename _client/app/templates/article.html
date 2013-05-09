@@ -1,22 +1,26 @@
-<h2>{{ article.title }}</h2>
+<article>
+  <h2>{{ article.title }}
+    <small>{{ article.created_at | date:'MMM dd, y' }}</small>
+  </h2>
 
-<hr>
+  <hr>
 
-<article ng-bind-html-unsafe="article.body_html"></article>
+  <div ng-bind-html-unsafe="article.body_html"></div>
 
-<hr>
+  <hr>
 
-<h3>{{ article.comments }} Comments</h3>
+  <h3>{{ article.comments }} Comments</h3>
 
-<hr>
+  <hr>
 
-<div ng-repeat="comment in comments">
-  <div class="row-fluid">
-    <div class="span2">
-      <img ng-src="{{ comment.user.avatar_url }}" class="img-circle">
+  <aside ng-repeat="comment in comments">
+    <div class="row-fluid">
+      <div class="span2">
+        <img ng-src="{{ comment.user.avatar_url }}" class="img-circle">
+      </div>
+      <div class="span10 well well-small">
+        <aside ng-bind-html-unsafe="comment.body_html"></aside>
+      </div>
     </div>
-    <div class="span10 well well-small">
-      <aside ng-bind-html-unsafe="comment.body_html"></aside>
-    </div>
-  </div>
-</div>
+  </aside>
+</article>

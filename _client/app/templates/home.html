@@ -1,9 +1,11 @@
-<h2>Articles</h2>
+<section>
+  <h2>Articles</h2>
 
-<hr>
+  <hr>
 
-<div ng-repeat="article in articles" class="well well-small">
-  <h4>
-    <a ng-href="article/{{ article.number }}/{{ article.title | slugify }}">{{ article.title }}</a>
-  </h4>
-</div>
+  <div ng-repeat="article in articles" class="well well-small">
+    <h4>
+      <a ng-href="article/{{ article.number }}/{{ article.title | slugify }}">{{ article.title }}</a>
+    </h4>
+  </div>
+</section>
