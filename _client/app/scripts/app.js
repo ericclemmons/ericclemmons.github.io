@@ -3,7 +3,7 @@ angular
     'slugifier'
   ])
   .constant('GITHUB_USER', 'ericclemmons')
-  .constant('GITHUB_REPO', 'site')
+  .constant('GITHUB_REPO', 'ericclemmons.github.io')
   .config([
     '$locationProvider',
     '$routeProvider',
