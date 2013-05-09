@@ -8,15 +8,19 @@ angular
     '$locationProvider',
     '$routeProvider',
     function($location, $router) {
-      $location.hashPrefix('!');
+      $location
+        .html5Mode(true)
+        .hashPrefix('!')
+      ;
+
       $router
-        .when('/', {
-          controller:   'homeController',
-          templateUrl:  'app/templates/home.html'
-        })
         .when('/article/:number/:slug', {
           controller:   'articleController',
           templateUrl:  'app/templates/article.html'
+        })
+        .when('/', {
+          controller:   'homeController',
+          templateUrl:  'app/templates/home.html'
         })
       ;
     }

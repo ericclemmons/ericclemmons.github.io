@@ -1,7 +1,7 @@
 module.exports = (grunt)->
 
   # Run `grunt server` for live-reloading development environment
-  grunt.registerTask('server', [ 'build', 'livereload-start', 'karma:background', 'regarde' ])
+  grunt.registerTask('server', [ 'build', 'livereload-start', 'karma:background', 'express-server', 'regarde' ])
 
   # Run `grunt test` (used by `npm test`) for continuous integration (e.g. Travis)
   grunt.registerTask('test', [ 'build', 'karma:unit' ])
@@ -9,8 +9,8 @@ module.exports = (grunt)->
   # Run `grunt test:browsers` for real-world browser testing
   grunt.registerTask('test:browsers', [ 'karma:browsers', 'server' ])
 
-  # Clean, validate & compile web-accessible resources
-  grunt.registerTask('build', [ 'clean', 'jshint', 'copy', 'ngtemplates', 'less' ])
+  # Validate & compile web-accessible resources
+  grunt.registerTask('build', [ 'jshint', 'copy', 'ngtemplates', 'less' ])
 
   # Optimize pre-built, web-accessible resources for production, primarily `usemin`
   grunt.registerTask('optimize', [ 'useminPrepare', 'concat', 'uglify', 'mincss', 'usemin' ])
@@ -20,9 +20,10 @@ module.exports = (grunt)->
   grunt.config.init
 
     # Directory CONSTANTS (see what I did there?)
-    BUILD_DIR:      'build/'
-    CLIENT_DIR:     'client/'
-    COMPONENTS_DIR: 'components/'
+    BUILD_DIR:      './'
+    CLIENT_DIR:     '_client/'
+    COMPONENTS_DIR: '_components/'
+    SERVER_DIR:     '_server/'
 
     # Glob CONSTANTS
     ALL_FILES:      '**/*'
@@ -32,10 +33,6 @@ module.exports = (grunt)->
     JS_FILES:       '**/*.js'
     LESS_FILES:     '**/*.less'
 
-
-    # Wipe the `build` directory
-    clean:
-      build:        '<%= BUILD_DIR %>'
 
     copy:
       # App images from Bower `components` & `client`
@@ -59,6 +56,9 @@ module.exports = (grunt)->
           cwd:      '<%= CLIENT_DIR %>'
           src:      '<%= ALL_FILES %>'
           dest:     '<%= BUILD_DIR %>'
+        ,
+          src:      '<%= CLIENT_DIR %>/index.html'
+          dest:     '<%= BUILD_DIR %>/404.html'
         ]
 
       # Make components HTTP-accessible
@@ -82,11 +82,15 @@ module.exports = (grunt)->
           cwd:      '<%= CLIENT_DIR %>'
           src:      '<%= HTML_FILES %>'
           dest:     '<%= BUILD_DIR %>'
+        ,
+          src:      '<%= CLIENT_DIR %>/index.html'
+          dest:     '<%= BUILD_DIR %>/404.html'
         ]
 
-    # Validate app `client` JS
+    # Validate app `client` and `server` JS
     jshint:
-      files:        ['<%= CLIENT_DIR + JS_FILES %>' ]
+      files:        [ '<%= SERVER_DIR + JS_FILES %>'
+                      '<%= CLIENT_DIR + JS_FILES %>' ]
       options:
         es5:        true
         laxcomma:   true  # Common in Express-derived libraries
@@ -103,7 +107,7 @@ module.exports = (grunt)->
 
       # Used for testing site across several browser profiles
       browsers:
-        browsers:   [ 'PhantomJS' ] # 'Chrome', 'ChromeCanary', 'Firefox', 'Opera', 'Safari', 'IE', 'bin/browsers.sh'
+        browsers:   [ 'PhantomJS' ] # 'Chrome', 'ChromeCanary', 'Firefox', 'Opera', 'Safari', 'IE', '_bin/browsers.sh'
         background: true
         singleRun:  false
 
@@ -123,12 +127,7 @@ module.exports = (grunt)->
 
     # Minify app `.css` resources -> `.min.css`
     mincss:
-      app:
-        expand:     true
-        cwd:        '<%= BUILD_DIR %>'
-        src:        '<%= CSS_FILES %>'
-        dest:       '<%= BUILD_DIR %>'
-        ext:        '.min.css'
+      app:          {}
 
     # Convert Angular `.html` templates to `.js` in the `app` module
     ngtemplates:
@@ -144,11 +143,6 @@ module.exports = (grunt)->
 
     # "watch" distinct types of files and re-prepare accordingly
     regarde:
-      # Any public-facing changes should reload the browser & re-run tests (which may depend on those resources)
-      build:
-        files:      '<%= BUILD_DIR + ALL_FILES %>'
-        tasks:      [ 'livereload', 'karma:background:run' ]
-
       # Changes to app code should be validated and re-copied to the `build`, triggering `regarde:build`
       js:
         files:      '<%= CLIENT_DIR + JS_FILES %>'
@@ -159,23 +153,32 @@ module.exports = (grunt)->
         files:      '<%= CLIENT_DIR + LESS_FILES %>'
         tasks:      [ 'less' ]
 
+      # Changes to server-side code should validate, restart the server, & refresh the browser
+      server:
+        files:      '<%= SERVER_DIR + ALL_FILES %>'
+        tasks:      [ 'parallel:jshint', 'express-server', 'livereload' ]
+
       # Changes to app templates should re-copy & re-compile them, triggering `regarde:build`
       templates:
         files:      '<%= CLIENT_DIR + HTML_FILES %>'
         tasks:      [ 'copy:templates', 'ngtemplates' ]
 
+    # Express requires `server.script` to reload from changes
+    server:
+      script:       '<%= SERVER_DIR %>/server.js'
+      port:         process.env.PORT || 3000
+
     # Output for optimized app index
     usemin:
-      html:         '<%= BUILD_DIR %>/index.html'
+      html:         [ '<%= BUILD_DIR %>/index.html', '<%= BUILD_DIR %>/404.html' ]
 
     # Input for optimized app index
     useminPrepare:
-      html:         '<%= BUILD_DIR %>/index.html'
+      html:         [ '<%= BUILD_DIR %>/index.html' ]
 
 
   # Dependencies
   grunt.loadNpmTasks('grunt-angular-templates')
-  grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-copy')
   grunt.loadNpmTasks('grunt-contrib-jshint')
@@ -183,6 +186,7 @@ module.exports = (grunt)->
   grunt.loadNpmTasks('grunt-contrib-livereload')
   grunt.loadNpmTasks('grunt-contrib-mincss')
   grunt.loadNpmTasks('grunt-contrib-uglify')
+  grunt.loadNpmTasks('grunt-express-server')
   grunt.loadNpmTasks('grunt-karma')
   grunt.loadNpmTasks('grunt-regarde')
   grunt.loadNpmTasks('grunt-parallel')
