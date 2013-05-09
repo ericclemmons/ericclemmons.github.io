@@ -32,6 +32,7 @@ module.exports = (grunt)->
     IMG_FILES:      '**/*.{png,gif,jpg,jpeg}'
     JS_FILES:       '**/*.js'
     LESS_FILES:     '**/*.less'
+    TEST_FILES:     '**/test/**'
 
 
     copy:
@@ -40,7 +41,7 @@ module.exports = (grunt)->
         files:      [
           expand:   true
           cwd:      '<%= CLIENT_DIR %>'
-          src:      '<%= ALL_FILES %>'
+          src:      [ '<%= ALL_FILES %>', '!<%= TEST_FILES %>' ]
           dest:     '<%= BUILD_DIR %>'
         ,
           src:      '<%= CLIENT_DIR %>/index.html'
@@ -57,7 +58,7 @@ module.exports = (grunt)->
         files:      [
           expand:   true
           cwd:      '<%= CLIENT_DIR %>'
-          src:      '<%= JS_FILES %>'
+          src:      [ '<%= JS_FILES %>', '!<%= TEST_FILES %>' ]
           dest:     '<%= BUILD_DIR %>'
         ]
 
@@ -66,7 +67,7 @@ module.exports = (grunt)->
         files:      [
           expand:   true
           cwd:      '<%= CLIENT_DIR %>'
-          src:      '<%= HTML_FILES %>'
+          src:      [ '<%= HTML_FILES %>', '!<%= TEST_FILES %>' ]
           dest:     '<%= BUILD_DIR %>'
         ,
           src:      '<%= CLIENT_DIR %>/index.html'
