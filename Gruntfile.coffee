@@ -35,20 +35,6 @@ module.exports = (grunt)->
 
 
     copy:
-      # App images from Bower `components` & `client`
-      images:
-        files:      [
-          expand:   true,
-          cwd:      '<%= COMPONENTS_DIR %>/bootstrap/img'
-          src:      '<%= IMG_FILES %>'
-          dest:     '<%= BUILD_DIR %>/img'
-        ,
-          expand:   true
-          cwd:      '<%= CLIENT_DIR %>'
-          src:      '<%= IMG_FILES %>'
-          dest:     '<%= BUILD_DIR %>'
-        ]
-
       # Copy `client` -> `build`, as resources are served from `build`
       client:
         files:      [
