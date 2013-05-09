@@ -8,6 +8,7 @@
     "angular-slugify": "git://github.com/paulsmith/angular-slugify.git",
     "angular-strap": "~0.7.3",
     "bootstrap": "~2.3.1",
+    "font-awesome": "~3.0.2",
     "html5shiv-dist": "~3.6.1",
     "modernizr": "~2.6.2"
   }
