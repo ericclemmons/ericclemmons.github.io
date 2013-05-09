@@ -3,8 +3,13 @@
 
 # TEAM
 
-    Eric Clemmons -- @ericclemmons
+    <name> -- <role> -- <twitter>
+
+# THANKS
+
+    <name>
 
 # TECHNOLOGY COLOPHON
 
-    Genesis Skeleton
+    HTML5, CSS3
+    jQuery, Modernizr
