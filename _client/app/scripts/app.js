@@ -4,6 +4,11 @@ angular
   ])
   .constant('GITHUB_USER', 'ericclemmons')
   .constant('GITHUB_REPO', 'ericclemmons.github.io')
+  .filter("slugify", ['Slug', function(Slug) {
+    return function(input) {
+      return Slug.slugify(input);
+    };
+  }])
   .config([
     '$locationProvider',
     '$routeProvider',
