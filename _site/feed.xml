@@ -7,7 +7,7 @@
 		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
-				<title>Use HTML5, Not Hash Routes</title>
+				<title>Using HTML5, Not Hash Routes</title>
 				<description>&lt;p&gt;By default AngularJS’ &lt;a href=&quot;http://code.angularjs.org/1.2.7/docs/api/ng.$locationProvider&quot;&gt;&lt;code&gt;$locationProvider&lt;/code&gt;&lt;/a&gt; defaults to URLs like:&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -90,8 +90,8 @@
 
 &lt;p&gt;Even with those minor nit-picks, I prefer my &lt;a href=&quot;http://en.wikipedia.org/wiki/Single-page_application&quot;&gt;SPA&lt;/a&gt;s to look &amp;amp; act like proper, server-rendered sites as much as possible, especially with minimal effort.&lt;/p&gt;</description>
 				<pubDate>Sat, 04 Jan 2014 00:00:00 -0600</pubDate>
-				<link>/angularjs/use-html5-not-hash-routes.html</link>
-				<guid isPermaLink="true">/angularjs/use-html5-not-hash-routes.html</guid>
+				<link>/angularjs/using-html5-not-hash-routes.html</link>
+				<guid isPermaLink="true">/angularjs/using-html5-not-hash-routes.html</guid>
 			</item>
 		
 	</channel>
