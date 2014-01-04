@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Eric Clemmons</title>
+		<description>Developer, Husband, Father</description>
+		<link>/</link>
+		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Use HTML5, Not Hash Routes</title>
+				<description>&lt;p&gt;By default AngularJS’ &lt;a href=&quot;http://code.angularjs.org/1.2.7/docs/api/ng.$locationProvider&quot;&gt;&lt;code&gt;$locationProvider&lt;/code&gt;&lt;/a&gt; defaults to URLs like:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;http://localhost:3000/#/admin/&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If in the future you may decide on one of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Your application’s URLs will &lt;a href=&quot;http://www.w3.org/Provider/Style/URI.html&quot;&gt;should have longevity&lt;/a&gt;.&lt;/li&gt;
+
+&lt;li&gt;You may switch from AngularJS to &lt;a href=&quot;http://facebook.github.io/react/&quot;&gt;another framework&lt;/a&gt;.&lt;/li&gt;
+
+&lt;li&gt;You may render URLs on the server to &lt;a href=&quot;https://blog.twitter.com/2012/improving-performance-twittercom&quot;&gt;improve performance, like Twitter.com did&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then, you should switch to HTML5 routing instead of using the default hash URLs.&lt;/p&gt;
+
+&lt;p&gt;Besides, &lt;strong&gt;it’s easy and takes 2 minutes&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;step_1_reenable__header&quot;&gt;Step 1: Re-enable &lt;code&gt;X-Requested-With&lt;/code&gt; Header&lt;/h3&gt;
+
+&lt;p&gt;For some reason, this was removed around &lt;a href=&quot;https://github.com/angular/angular.js/commit/3a75b1124d062f64093a90b26630938558909e8d&quot;&gt;v1.1.5&lt;/a&gt;, but it’s crucial for your AngularJS app to tell your server when it’s making AJAX requests for, say, an &lt;code&gt;ng-include&lt;/code&gt; or &lt;code&gt;templateUrl&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;javascript&#39;&gt;&lt;span class=&#39;c1&#39;&gt;// client/app.js&lt;/span&gt;
+&lt;span class=&#39;nx&#39;&gt;angular&lt;/span&gt;
+  &lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;module&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;s1&#39;&gt;&amp;#39;app&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;[])&lt;/span&gt;
+  &lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;config&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;([&lt;/span&gt;
+    &lt;span class=&#39;s1&#39;&gt;&amp;#39;$httpProvider&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;,&lt;/span&gt;
+    &lt;span class=&#39;kd&#39;&gt;function&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;$httpProvider&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;{&lt;/span&gt;
+      &lt;span class=&#39;c1&#39;&gt;// Expose XHR requests to server&lt;/span&gt;
+      &lt;span class=&#39;nx&#39;&gt;$httpProvider&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;defaults&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;headers&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;common&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;s1&#39;&gt;&amp;#39;X-Requested-With&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;]&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;s1&#39;&gt;&amp;#39;XMLHttpRequest&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+    &lt;span class=&#39;p&#39;&gt;}&lt;/span&gt;
+  &lt;span class=&#39;p&#39;&gt;])&lt;/span&gt;
+&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;step_2_enable_html5_routing&quot;&gt;Step 2: Enable HTML5 Routing&lt;/h3&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;javascript&#39;&gt;&lt;span class=&#39;c1&#39;&gt;// client/app.js&lt;/span&gt;
+&lt;span class=&#39;nx&#39;&gt;angular&lt;/span&gt;
+  &lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;module&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;s1&#39;&gt;&amp;#39;app&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;[])&lt;/span&gt;
+  &lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;config&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;([&lt;/span&gt;
+    &lt;span class=&#39;s1&#39;&gt;&amp;#39;$httpProvider&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;,&lt;/span&gt;
+    &lt;span class=&#39;s1&#39;&gt;&amp;#39;$locationProvider&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;,&lt;/span&gt;
+    &lt;span class=&#39;kd&#39;&gt;function&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;$httpProvider&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;$locationProvider&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;{&lt;/span&gt;
+      &lt;span class=&#39;c1&#39;&gt;// Expose XHR requests to server&lt;/span&gt;
+      &lt;span class=&#39;nx&#39;&gt;$httpProvider&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;defaults&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;headers&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;common&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;s1&#39;&gt;&amp;#39;X-Requested-With&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;]&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;s1&#39;&gt;&amp;#39;XMLHttpRequest&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+
+      &lt;span class=&#39;c1&#39;&gt;// This is `false` by default&lt;/span&gt;
+      &lt;span class=&#39;nx&#39;&gt;$locationProvider&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;html5Mode&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;kc&#39;&gt;true&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;);&lt;/span&gt;
+    &lt;span class=&#39;p&#39;&gt;}&lt;/span&gt;
+  &lt;span class=&#39;p&#39;&gt;])&lt;/span&gt;
+&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;step_3_create_a_wildcard_route&quot;&gt;Step 3: Create a Wildcard Route&lt;/h3&gt;
+
+&lt;p&gt;Assuming you’re using &lt;a href=&quot;http://expressjs.com/&quot;&gt;express&lt;/a&gt;, the &lt;strong&gt;very last route you define&lt;/strong&gt; will be you’re catch-all. This way, any routes you explicitly define on the server-side are handled there, while any other routes render the client-side page, AngularJS to handle.&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;javascript&#39;&gt;&lt;span class=&#39;c1&#39;&gt;// server/app.js&lt;/span&gt;
+&lt;span class=&#39;nx&#39;&gt;app&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;get&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;s1&#39;&gt;&amp;#39;/*&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;kd&#39;&gt;function&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;req&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;res&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;{&lt;/span&gt;
+  &lt;span class=&#39;c1&#39;&gt;// AJAX requests are aren&amp;#39;t expected to be redirected to the AngularJS app&lt;/span&gt;
+  &lt;span class=&#39;k&#39;&gt;if&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;req&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;xhr&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;{&lt;/span&gt;
+    &lt;span class=&#39;k&#39;&gt;return&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;res&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;status&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;mi&#39;&gt;404&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;).&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;send&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;req&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;url&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;+&lt;/span&gt; &lt;span class=&#39;s1&#39;&gt;&amp;#39; not found&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;);&lt;/span&gt;
+  &lt;span class=&#39;p&#39;&gt;}&lt;/span&gt;
+
+  &lt;span class=&#39;c1&#39;&gt;// `sendfile` requires the safe, resolved path to your AngularJS app&lt;/span&gt;
+  &lt;span class=&#39;nx&#39;&gt;res&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;sendfile&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;path&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;resolve&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;__dirname&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;+&lt;/span&gt; &lt;span class=&#39;s1&#39;&gt;&amp;#39;/path/to/index.html&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;));&lt;/span&gt;
+&lt;span class=&#39;p&#39;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The important part is the check for &lt;code&gt;req.xhr&lt;/code&gt;. If you didn’t include this, then using &lt;strong&gt;&lt;code&gt;ng-include&lt;/code&gt; with a missing template would recursively keep including your broken application&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;caveats&quot;&gt;Caveats&lt;/h3&gt;
+
+&lt;p&gt;Even though this solution has worked quite well in my experience (plus, it just feels right), there is one draw back: &lt;strong&gt;&lt;code&gt;404&lt;/code&gt;s are now &lt;code&gt;200&lt;/code&gt;s, as they’re now rendered by the client.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Luckily, this can be remedied a number of ways.&lt;/p&gt;
+
+&lt;p&gt;For example, if your server-side application consists of primarily an &lt;code&gt;/api&lt;/code&gt; root URL, then you can have &lt;code&gt;/api/*&lt;/code&gt; act as a catchall to send a legitimate &lt;code&gt;404&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you want to explicitly serve your AngularJS app &lt;strong&gt;only for AngularJS routes&lt;/strong&gt;, then you’ll have to do more legwork, where your routes are defined as an &lt;code&gt;Object&lt;/code&gt; for use by both the client &lt;em&gt;and&lt;/em&gt; server for defining routes.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Even with those minor nit-picks, I prefer my &lt;a href=&quot;http://en.wikipedia.org/wiki/Single-page_application&quot;&gt;SPA&lt;/a&gt;s to look &amp;amp; act like proper, server-rendered sites as much as possible, especially with minimal effort.&lt;/p&gt;</description>
+				<pubDate>Sat, 04 Jan 2014 00:00:00 -0600</pubDate>
+				<link>/angularjs/use-html5-not-hash-routes.html</link>
+				<guid isPermaLink="true">/angularjs/use-html5-not-hash-routes.html</guid>
+			</item>
+		
+	</channel>
+</rss>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<! -- header.html -->
+<meta charset="utf-8">
+<title>Use HTML5, Not Hash Routes</title>
+
+<meta name="author" content="Eric Clemmons">
+
+<!-- Enable responsive viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+<!--[if lt IE 9]>
+ <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- Le styles -->
+<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+<link href="/assets/css/style.css" rel="stylesheet">
+
+<!-- Le fav and touch icons -->
+<!-- Update these with your own images
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+-->
+
+ <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+<! -- header.html end -->
+
+
+   <body>
+   		<nav class="navbar navbar-default visible-xs" role="navigation">
+		  <!-- Brand and toggle get grouped for better mobile display -->
+		  <div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			  <span class="sr-only">Toggle navigation</span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/ericclemmons">
+		      <i class="fa fa-github"></i>
+		    </a>
+		    
+		    
+		    <a type="button" class="navbar-toggle nav-link" href="http://twitter.com/ericclemmons">
+		      <i class="fa fa-twitter"></i>
+		    </a>
+		    
+		    
+		    <a type="button" class="navbar-toggle nav-link" href="mailto:eric@smarterspam.com">
+		      <i class="fa fa-envelope"></i>
+		    </a>
+		    
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/b6ffb4f3fe821e31f69923630dfdebc5?s=35" class="img-circle" />
+				Eric Clemmons
+			</a>
+		  </div>
+
+		  <!-- Collect the nav links, forms, and other content for toggling -->
+		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+			  <li class="active"><a href="/">Home</a></li>
+			  <li><a href="/categories.html">Categories</a></li>
+  			  <li><a href="/tags.html">Tags</a></li>
+			</ul>
+		  </div><!-- /.navbar-collapse -->
+		</nav>
+
+       <!-- nav-menu-dropdown -->
+       <div class="btn-group hidden-xs" id="nav-menu">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="/categories.html"><i class="fa fa-folder"></i> Categories</a></li>
+            <li><a href="/tags.html"><i class="fa fa-tags"></i> Tags</a></li>
+              <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-arrow-up"></i> Top of Page</a></li>
+          </ul>
+       </div>
+
+		<div class="col-sm-3 sidebar hidden-xs">
+			<! -- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/b6ffb4f3fe821e31f69923630dfdebc5?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">Eric Clemmons</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	VP of Software Development @CMN. Dad, open-source addict, musician. Details matter.
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/ericclemmons">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/ericclemmons">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:eric@smarterspam.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/ericclemmons">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+
+	
+
+<! -- sidebar.html end -->
+
+		</div>
+
+		<div class="col-sm-9 col-sm-offset-3">
+			<article>
+	<div class="page-header">
+	  <h1>Use HTML5, Not Hash Routes </h1>
+	</div>
+
+	<div class="col-sm-10">
+	 <span class="post-date">
+	   
+	   January
+	   4th,
+	   
+	   2014
+	 </span>
+	  <div class="article_body">
+	  <p>By default AngularJS’ <a href="http://code.angularjs.org/1.2.7/docs/api/ng.$locationProvider"><code>$locationProvider</code></a> defaults to URLs like:</p>
+
+<blockquote>
+<p>http://localhost:3000/#/admin/</p>
+</blockquote>
+
+<p>If in the future you may decide on one of the following:</p>
+
+<ul>
+<li>Your application’s URLs will <a href="http://www.w3.org/Provider/Style/URI.html">should have longevity</a>.</li>
+
+<li>You may switch from AngularJS to <a href="http://facebook.github.io/react/">another framework</a>.</li>
+
+<li>You may render URLs on the server to <a href="https://blog.twitter.com/2012/improving-performance-twittercom">improve performance, like Twitter.com did</a>.</li>
+</ul>
+
+<p>Then, you should switch to HTML5 routing instead of using the default hash URLs.</p>
+
+<p>Besides, <strong>it’s easy and takes 2 minutes</strong>.</p>
+<hr />
+<h3 id="step_1_reenable__header">Step 1: Re-enable <code>X-Requested-With</code> Header</h3>
+
+<p>For some reason, this was removed around <a href="https://github.com/angular/angular.js/commit/3a75b1124d062f64093a90b26630938558909e8d">v1.1.5</a>, but it’s crucial for your AngularJS app to tell your server when it’s making AJAX requests for, say, an <code>ng-include</code> or <code>templateUrl</code>.</p>
+<div class='highlight'><pre><code class='javascript'><span class='c1'>// client/app.js</span>
+<span class='nx'>angular</span>
+  <span class='p'>.</span><span class='nx'>module</span><span class='p'>(</span><span class='s1'>&#39;app&#39;</span><span class='p'>,</span> <span class='p'>[])</span>
+  <span class='p'>.</span><span class='nx'>config</span><span class='p'>([</span>
+    <span class='s1'>&#39;$httpProvider&#39;</span><span class='p'>,</span>
+    <span class='kd'>function</span><span class='p'>(</span><span class='nx'>$httpProvider</span><span class='p'>)</span> <span class='p'>{</span>
+      <span class='c1'>// Expose XHR requests to server</span>
+      <span class='nx'>$httpProvider</span><span class='p'>.</span><span class='nx'>defaults</span><span class='p'>.</span><span class='nx'>headers</span><span class='p'>.</span><span class='nx'>common</span><span class='p'>[</span><span class='s1'>&#39;X-Requested-With&#39;</span><span class='p'>]</span> <span class='o'>=</span> <span class='s1'>&#39;XMLHttpRequest&#39;</span><span class='p'>;</span>
+    <span class='p'>}</span>
+  <span class='p'>])</span>
+<span class='p'>;</span>
+</code></pre></div>
+<h3 id="step_2_enable_html5_routing">Step 2: Enable HTML5 Routing</h3>
+<div class='highlight'><pre><code class='javascript'><span class='c1'>// client/app.js</span>
+<span class='nx'>angular</span>
+  <span class='p'>.</span><span class='nx'>module</span><span class='p'>(</span><span class='s1'>&#39;app&#39;</span><span class='p'>,</span> <span class='p'>[])</span>
+  <span class='p'>.</span><span class='nx'>config</span><span class='p'>([</span>
+    <span class='s1'>&#39;$httpProvider&#39;</span><span class='p'>,</span>
+    <span class='s1'>&#39;$locationProvider&#39;</span><span class='p'>,</span>
+    <span class='kd'>function</span><span class='p'>(</span><span class='nx'>$httpProvider</span><span class='p'>,</span> <span class='nx'>$locationProvider</span><span class='p'>)</span> <span class='p'>{</span>
+      <span class='c1'>// Expose XHR requests to server</span>
+      <span class='nx'>$httpProvider</span><span class='p'>.</span><span class='nx'>defaults</span><span class='p'>.</span><span class='nx'>headers</span><span class='p'>.</span><span class='nx'>common</span><span class='p'>[</span><span class='s1'>&#39;X-Requested-With&#39;</span><span class='p'>]</span> <span class='o'>=</span> <span class='s1'>&#39;XMLHttpRequest&#39;</span><span class='p'>;</span>
+
+      <span class='c1'>// This is `false` by default</span>
+      <span class='nx'>$locationProvider</span><span class='p'>.</span><span class='nx'>html5Mode</span><span class='p'>(</span><span class='kc'>true</span><span class='p'>);</span>
+    <span class='p'>}</span>
+  <span class='p'>])</span>
+<span class='p'>;</span>
+</code></pre></div>
+<h3 id="step_3_create_a_wildcard_route">Step 3: Create a Wildcard Route</h3>
+
+<p>Assuming you’re using <a href="http://expressjs.com/">express</a>, the <strong>very last route you define</strong> will be you’re catch-all. This way, any routes you explicitly define on the server-side are handled there, while any other routes render the client-side page, AngularJS to handle.</p>
+<div class='highlight'><pre><code class='javascript'><span class='c1'>// server/app.js</span>
+<span class='nx'>app</span><span class='p'>.</span><span class='nx'>get</span><span class='p'>(</span><span class='s1'>&#39;/*&#39;</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>req</span><span class='p'>,</span> <span class='nx'>res</span><span class='p'>)</span> <span class='p'>{</span>
+  <span class='c1'>// AJAX requests are aren&#39;t expected to be redirected to the AngularJS app</span>
+  <span class='k'>if</span> <span class='p'>(</span><span class='nx'>req</span><span class='p'>.</span><span class='nx'>xhr</span><span class='p'>)</span> <span class='p'>{</span>
+    <span class='k'>return</span> <span class='nx'>res</span><span class='p'>.</span><span class='nx'>status</span><span class='p'>(</span><span class='mi'>404</span><span class='p'>).</span><span class='nx'>send</span><span class='p'>(</span><span class='nx'>req</span><span class='p'>.</span><span class='nx'>url</span> <span class='o'>+</span> <span class='s1'>&#39; not found&#39;</span><span class='p'>);</span>
+  <span class='p'>}</span>
+
+  <span class='c1'>// `sendfile` requires the safe, resolved path to your AngularJS app</span>
+  <span class='nx'>res</span><span class='p'>.</span><span class='nx'>sendfile</span><span class='p'>(</span><span class='nx'>path</span><span class='p'>.</span><span class='nx'>resolve</span><span class='p'>(</span><span class='nx'>__dirname</span> <span class='o'>+</span> <span class='s1'>&#39;/path/to/index.html&#39;</span><span class='p'>));</span>
+<span class='p'>});</span>
+</code></pre></div>
+<p>The important part is the check for <code>req.xhr</code>. If you didn’t include this, then using <strong><code>ng-include</code> with a missing template would recursively keep including your broken application</strong>.</p>
+
+<h3 id="caveats">Caveats</h3>
+
+<p>Even though this solution has worked quite well in my experience (plus, it just feels right), there is one draw back: <strong><code>404</code>s are now <code>200</code>s, as they’re now rendered by the client.</strong></p>
+
+<p>Luckily, this can be remedied a number of ways.</p>
+
+<p>For example, if your server-side application consists of primarily an <code>/api</code> root URL, then you can have <code>/api/*</code> act as a catchall to send a legitimate <code>404</code>.</p>
+
+<p>If you want to explicitly serve your AngularJS app <strong>only for AngularJS routes</strong>, then you’ll have to do more legwork, where your routes are defined as an <code>Object</code> for use by both the client <em>and</em> server for defining routes.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Even with those minor nit-picks, I prefer my <a href="http://en.wikipedia.org/wiki/Single-page_application">SPA</a>s to look &amp; act like proper, server-rendered sites as much as possible, especially with minimal effort.</p>
+	  </div>
+
+	  <hr>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+		  <li><i class="fa fa-folder-open"></i></li>
+		  
+		  
+			
+				<li><a href="/categories.html#angularjs-ref">
+					angularjs <span>(1)</span>
+					
+				</a></li>
+			
+		  
+		</ul>
+		
+
+		
+		<ul class="list-inline">
+		  <li><i class="fa fa-tags"></i></li>
+		  
+		  
+			
+				<li>
+					<a href="/tags.html#angular-ref">
+					angular <span>(1)</span>
+					,
+					</a>
+				</li>
+			
+				<li>
+					<a href="/tags.html#html5-ref">
+					html5 <span>(1)</span>
+					,
+					</a>
+				</li>
+			
+				<li>
+					<a href="/tags.html#javascript-ref">
+					javascript <span>(1)</span>
+					
+					</a>
+				</li>
+			
+		  
+		  
+		</ul>
+		
+
+		<hr>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'ericclemmons';
+        var disqus_identifier = '/angularjs/use-html5-not-hash-routes.html';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		<hr>
+
+		<ul class="pager">
+		  
+		  <li class="previous disabled"><a>&larr; Previous</a></li>
+		  
+		  
+			<li class="next disabled"><a>Next &rarr;</a>
+		  
+		</ul>
+
+		<hr>
+	</div>
+
+	<div class="col-sm-2 sidebar-2">
+
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+			<!-- footer.html -->
+<footer>
+ <hr/>
+ <p>
+ 	&copy; 2014 Eric Clemmons with Jekyll. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+ </p>
+</footer>
+
+<!-- footer.html end -->
+
+
+		</div>
+
+    
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+   </body>
+
+</html>
+
+
