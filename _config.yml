@@ -17,7 +17,7 @@ author:
   email_md5: b6ffb4f3fe821e31f69923630dfdebc5
 
 
-permalink: none
+permalink: /:categories/:title
 rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
