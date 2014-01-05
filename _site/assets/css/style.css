@@ -1,7 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Lora);
 
 body{
-	color: #2c3e50;
+    color: #2c3e50;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .sidebar {
@@ -20,7 +22,8 @@ body{
 
 .sidebar-header .title a{
 	text-decoration: none;
-	color: #2c3e50;
+    text-transform: uppercase;
+    color: #2c3e50;
 }
 
 a.nav-link {
@@ -64,13 +67,13 @@ article.home div a, article.home pre a { color: #2c3e50; }
 article.home div a:hover, article.home pre a:hover { color: #2c3e50; text-decoration: none; }
 article img { max-width: 100%; }
 
-h1,h2,h3,h4,h5,h6{ font-family: 'Open Sans', sans-serif; color: #f2756a; }
+h1,h2,h3,h4,h5,h6{ font-family: 'Lora', serif; color: #f2756a; }
 h1 a,h2 a,h3 a,h4 a{ color: #f2756a; }
 h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover{ color: #e74c3c; }
 
 footer {
 	padding-top: 15px;
-	font-family: 'Open Sans';
+	font-family: 'Lora', serif;
 }
 
 /* nav-vertical-tabs component */
