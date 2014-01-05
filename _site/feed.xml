@@ -94,5 +94,165 @@
 				<guid isPermaLink="true">/angularjs/using-html5-not-hash-routes</guid>
 			</item>
 		
+			<item>
+				<title>Why I'm Terrible at Finishing</title>
+				<description>&lt;blockquote&gt;
+&lt;p&gt;Avoiding “academic” in favor of “utility”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I have &lt;a href=&quot;https://github.com/ericclemmons?tab=repositories&quot;&gt;several side-projects&lt;/a&gt; that are important to me, all in various stages of completion – some open-source and some private until they reach the ever-moving goal post known as “private beta”. Projects for others I have no problem meeting that goal, but my own projects are in a perpetual state of “polish”.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;my_first_halfmarathon&quot;&gt;My First Half-Marathon&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/productivity/why-i-am-terrible-at-finishing.jpg&quot; alt=&quot;project commit history&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Sometime last year on my drive into work I heard over the radio that registration for the &lt;a href=&quot;http://www.chevronhoustonmarathon.com/&quot;&gt;Houston Marathon&lt;/a&gt; was now open to the public.&lt;/p&gt;
+
+&lt;p&gt;I enjoy running, though I prefer rock climbing &amp;amp; mountain biking, but I was looking for an opportunity to accomplish some personal health goals:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Have a &lt;strong&gt;consistent&lt;/strong&gt;, long-term physical activity&lt;/li&gt;
+
+&lt;li&gt;Be able to &lt;strong&gt;measure&lt;/strong&gt; improvement &amp;amp; performance&lt;/li&gt;
+
+&lt;li&gt;Have an &lt;strong&gt;clear, attainable&lt;/strong&gt; goal&lt;/li&gt;
+
+&lt;li&gt;Finally, to &lt;strong&gt;achieve&lt;/strong&gt; it&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Listing these out clearly shows exactly why my personal projects have floundered while both my physical &amp;amp; career goals have succeeded.&lt;/p&gt;
+
+&lt;p&gt;Identifying the Problem Initially, I assumed that my personal projects never ended because there was nothing to lose. That’s clearly false because the investment for the half-marathon was negligible, and several professional projects are entirely open-ended (20% time) that see more success than my own.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I don’t provide a &lt;strong&gt;measurable, clear, attainable, goal&lt;/strong&gt; to &lt;strong&gt;consistently&lt;/strong&gt; work towards &lt;strong&gt;achieving&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This realization came at a complete surprise to me, since I’m so used to practicing it daily in my career. However, the evidence is readily available as I peruse my Github issues – full of non-essential feature ideas – and my planning documents on what the launch product will be – vague, at best.&lt;/p&gt;
+
+&lt;h3 id=&quot;academic_ambitions&quot;&gt;Academic Ambitions&lt;/h3&gt;
+
+&lt;p&gt;My personal projects have also suffered from the desire to “scratch an itch”, whether that be write &lt;a href=&quot;https://github.com/ericclemmons/ericclemmons.github.io/tree/29608775303c1c02ae02d73dfcfc82dc61948af8&quot;&gt;yet&lt;/a&gt;-&lt;a href=&quot;https://github.com/ericclemmons/ericclemmons.github.io&quot;&gt;another&lt;/a&gt;-static-generator, try out &lt;a href=&quot;http://angularjs.org/&quot;&gt;new&lt;/a&gt; &lt;a href=&quot;http://laravel.com/&quot;&gt;technology&lt;/a&gt;, or simply pursue my own desire for experimentation.&lt;/p&gt;
+
+&lt;p&gt;Sure, I use every opportunity in my professional projects to accomplish the same desires I have for personal projects; but, they all share the same concrete, definitive steps I listed above and don’t suffer the same fate.&lt;/p&gt;
+
+&lt;h3 id=&quot;providing_utility&quot;&gt;Providing Utility&lt;/h3&gt;
+
+&lt;p&gt;Going forward, I will be putting into practice what I preach in day-to-day professionally while chasing my personal ambitions.&lt;/p&gt;
+
+&lt;p&gt;Doing that is as simple as defining and iterating on various levels of utility. Once some form has been provided, then it’s time to release.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;My previous desire to release when “ready” was unrealistic and counter-productive.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;finishing&quot;&gt;Finishing&lt;/h3&gt;
+
+&lt;p&gt;There will always be a chance to polish. There will always be a chance to “win back” those who weren’t impressed by the first release. There will always be work to do.&lt;/p&gt;
+
+&lt;p&gt;And that’s why my goals are no longer just to build something great, but to &lt;strong&gt;finish something great&lt;/strong&gt;.&lt;/p&gt;</description>
+				<pubDate>Wed, 12 Jun 2013 00:00:00 -0500</pubDate>
+				<link>/productivity/why-i-am-terrible-at-finishing</link>
+				<guid isPermaLink="true">/productivity/why-i-am-terrible-at-finishing</guid>
+			</item>
+		
+			<item>
+				<title>Track Commits, Not Time</title>
+				<description>&lt;p&gt;Several times in my career has the issue of tracking developers’ time come up.&lt;/p&gt;
+
+&lt;p&gt;Sometimes the result has been disastrous, causing a decline in morale and overall performance. Sometimes the result has been beneficial, as it was already a part of an existing workflow. However, as of now, time tracking has gone from a burden to a byproduct of our workflow.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/business/track-commits-not-time.jpg&quot; alt=&quot;project commit history&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;why_track_time_at_all&quot;&gt;Why Track Time at All?&lt;/h3&gt;
+
+&lt;p&gt;In my experience, there are really three reasons to track time (i.e. resources spent on a project):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Accounting&lt;/li&gt;
+
+&lt;li&gt;Prioritization&lt;/li&gt;
+
+&lt;li&gt;Trust&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;accounting&quot;&gt;Accounting&lt;/h4&gt;
+
+&lt;p&gt;Many software projects often constitute new development or maintenance. In the simplest of scenarios (as edge-cases will have to be accounted for in all circumstances), the following synopsis holds true:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Software development costs that add future value are typically capitalized. Expenditures that do not increase the value of the asset are expensed.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Development costs typically constitute a large sum for the business and can easily affect financial reports. However, these reports absolutely must be accurate and defensible, which is why time tracking is commonly a pervasive hinderance to productivity &amp;amp; workflow. (Rarely have I seen this overhead even accounted for.)&lt;/p&gt;
+
+&lt;h4 id=&quot;prioritization&quot;&gt;Prioritization&lt;/h4&gt;
+
+&lt;p&gt;Often time tracking is treated as an extremely granular indication that time and resources are spent on the projects matching that of the company’s strategy.&lt;/p&gt;
+
+&lt;p&gt;This is simply mischaracterizing the solution that time tracking provides as one for proper project management. In other words, this approach erroneously tracks the results rather than the initial direction.&lt;/p&gt;
+
+&lt;h4 id=&quot;trust&quot;&gt;Trust&lt;/h4&gt;
+
+&lt;p&gt;Perhaps this affects contractors more than salaried employees, but the problem exists nonetheless.&lt;/p&gt;
+
+&lt;p&gt;Without trust, anything else, such as time tracking, is trivial until this core tenant of the employee/employer relationship is resolved.&lt;/p&gt;
+
+&lt;h3 id=&quot;tracking_time_is_a_burden&quot;&gt;Tracking Time is a Burden&lt;/h3&gt;
+
+&lt;p&gt;The most frightening realization is when time is tracked accurately and both the developer and the employer realize how much non-coding time is “wasted.”&lt;/p&gt;
+
+&lt;p&gt;Fellow developers understand the huge value in walking away from a problem, bouncing ideas off of a coworker, or freeing your mind from the annoyances of a problem to come back moments later with a crystal-clear solution.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, the reporting of these activities aren’t readily defensible from an investment perspective and, in all honesty, seems wrong from an outside perspective, particularly to a company who’s culture demands a seat being warmed from 8AM-5PM.&lt;/p&gt;
+
+&lt;p&gt;Many candid conversations I’ve had told of the same result – the time tracking turned into a daily estimating activity for each developer, which eventually turned into a weekly, and finally a monthly activity, becoming exceedingly less accurate and more presentable as it continued.&lt;/p&gt;
+
+&lt;h3 id=&quot;a_better_way_to_track_time&quot;&gt;A Better Way to Track Time&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The following is the result of my professional discussions with various financial auditors and certified accountants based on specific projects. In other words, ask permission instead of begging forgiveness :)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Clearly, the following solution is ideal for salaried employees. Contractors should track any client activities (e.g. meetings, research, development, etc.).&lt;/p&gt;
+
+&lt;p&gt;When I was tasked with itemizing employees’ time spent on various projects (that were either capitalized or expensed), luckily, resource distribution was very cut-and-dry.&lt;/p&gt;
+
+&lt;p&gt;First, cross-project development for a single developer within the workweek was rare, as we normally do weekly sprints on single large features or a single codebase. Second, work was almost exclusively new features or maintenance. Finally, we already use a clear branching scheme with prefixes like &lt;code&gt;feature&lt;/code&gt;, &lt;code&gt;hotfix&lt;/code&gt;, &lt;code&gt;issue&lt;/code&gt;, etc.&lt;/p&gt;
+
+&lt;p&gt;Already having an accurate time-per-developer calculation in hand, I tested another method for comparison.&lt;/p&gt;
+
+&lt;h3 id=&quot;my_simple_solution&quot;&gt;My Simple Solution&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If a developer’s workflow is consistent across projects with semantic commits/branches, then that itself is reflective of time spent.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It turns out, most developers I’ve worked with, like myself, make very atomic, de-coupled commits. Add in the fact that our branch names indicated the time of work being done, and results were nearly identical!&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;(Commits per Project) / (Total Commits) = % Time on Project&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Granted, we had fixed prioritization meetings each week and scheduled events, but those were easily calculated out of the bottom line.&lt;/p&gt;
+
+&lt;p&gt;The amazing thing is, &lt;strong&gt;everything we were doing was already part of our workflow&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you have the opportunity to investigate time tracking alternatives, I would eagerly invite you to do the same and discuss &lt;em&gt;workflow tracking&lt;/em&gt; over &lt;em&gt;time tracking&lt;/em&gt; with your company.&lt;/p&gt;
+
+&lt;p&gt;Likewise, if you have suggestions or improvements to how to best correlate time with workflow, I would love to hear from you!&lt;/p&gt;
+
+&lt;p&gt;Exported from Medium on January 4, 2014.&lt;/p&gt;
+
+&lt;p&gt;View the original&lt;/p&gt;</description>
+				<pubDate>Wed, 05 Jun 2013 00:00:00 -0500</pubDate>
+				<link>/business/track-commits-not-time</link>
+				<guid isPermaLink="true">/business/track-commits-not-time</guid>
+			</item>
+		
 	</channel>
 </rss>

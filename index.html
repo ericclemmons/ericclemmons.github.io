@@ -35,6 +35,12 @@ tagline:
                     {% else %}
                         {{ post.excerpt }}
                     {% endif %}
+
+                    <div class="pager">
+                      <li class="previous">
+                        <a href="{{ site.BASE_PATH }}{{ post.url }}">Continue Reading &rarr;</a>
+                      </li>
+                    </div>
                 {% endif %}
             </div>
 
