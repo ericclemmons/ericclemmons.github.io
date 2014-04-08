@@ -1,9 +1,9 @@
-title:            HMFAYSAL
-description:      "Omega: The Coolest Theme for Jekyll"
-logo:             omikron.png
-disqus_shortname: hmfaysal
+title:            Eric Clemmons
+description:      "VP of Software Development @CMN. Dad, open-source addict, musician. Details matter."
+logo:             http://www.gravatar.com/avatar/b6ffb4f3fe821e31f69923630dfdebc5.png
+disqus_shortname: ericclemmons
 # Assign a default image for your site's header and footer
-default_bg:       default_bg.jpg
+default_bg:       breck.jpg
 search:           true
 share:            true
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
@@ -11,38 +11,30 @@ readtime:         true
 # Turn on or off the fin animations in the header and footer
 animated_fins:	  true
 # Specify the fin color in RGB value
-fin_color:        "255,255,255"
+fin_color:        "0,0,0"
 # Change url to your domain. Leave localhost server or blank when working locally.
-# or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
+# or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
-baseurl:          /hmfaysal-omega-theme
+baseurl:          ''
 
 # Owner/author information
 owner:
-  name:           Hossain Mohd Faysal
-  avatar:         hmfaysal.jpg
-  email:          hmfaysal@alum.mit.edu
-  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Hossain Mohammad Faysal is an Electrical Engineer and a Mathematician based in Doha, Qatar. His interests are anything that&#8217;s related to math, from math itself to programming languages to music to physics to engineering to philosophy.
-  # Social networking links used in footer. Update and remove as you like.
-  # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
-  twitter:        hmfaysal
-  facebook:       hmfaysal
-  github:         hmfaysal
-  stackexchange:  https://stackexchange.com/users/3402032/hossain-mohd-faysal
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:         
-  hmfaysalsocial: hmfaysal
-  # For Google Authorship https://plus.google.com/authorship
-  google_plus:    https://plus.google.com/u/0/102602916593522619858
+  name:           Eric Clemmons
+  avatar:         http://www.gravatar.com/avatar/b6ffb4f3fe821e31f69923630dfdebc5.png
+  email:          eric@smarterspam.com
+  description:    "VP of Software Development @CMN. Dad, open-source addict, musician. Details matter."
+  twitter:        ericclemmons
+  facebook:       ericclemmons
+  github:         ericclemmons
+  stackexchange:  https://stackexchange.com/users/66169/eric
+  linkedin:       ericclemmons
+  google_plus:    http://google.com/+EricClemmons
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   UA-39365944-7
-google_verify:      
+google_analytics:   UA-49806707-1
+google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+bing_verify:
 
 # Links to include in footer navigation
 # For external links add external: true
@@ -51,25 +43,22 @@ links:
     url: /
     external: false
     icon: home
-  - title: <i class="icon-book"></i> Documentation
-    url: /documentation
   - title: Categories
     url: /categories
   - title: Tags
     url: /tags
-  - title: Faysal who?
-    url: /hossain-mohd-faysal
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    America/Chicago
 future:      true
 pygments:    true
 markdown:    kramdown
-paginate:    6
+paginate:    10
 paginate_path: "page:num"
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:categories/:title
+excerpt_separator: ---
 
 kramdown:
   auto_ids: true
@@ -79,7 +68,7 @@ kramdown:
   use_coderay: false
 
   coderay:
-    coderay_line_numbers: 
+    coderay_line_numbers:
     coderay_line_numbers_start: 1
     coderay_tab_width: 4
     coderay_bold_every: 10
