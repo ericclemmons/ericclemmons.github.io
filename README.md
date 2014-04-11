@@ -1,6 +1,6 @@
 # [Eric Clemmons' Website](http://ericclemmons.com)
 
-> Based on [dbyll](http://dbtek.github.io/dbyll/)
+> Based on [Omega](https://github.com/hmfaysal/hmfaysal-omega-theme)
 
 
 ### Development
