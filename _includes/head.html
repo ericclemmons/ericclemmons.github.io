@@ -7,7 +7,7 @@
 {% if page.image.feature %}<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{{ site.url }}/images/{{ page.image.feature }}">
 {% else %}<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.url }}/images/{{ site.logo }}{% endif %}">{% endif %}
+<meta name="twitter:image" content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.logo }}{% endif %}">{% endif %}
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
 <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 <meta name="twitter:creator" content="@{{ site.owner.twitter }}">{% endif %}
@@ -34,7 +34,7 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
+
     <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/style.css" />
 
@@ -67,7 +67,7 @@
                    autoNumber: "AMS",
                 },
                 unicode: {
-                   fonts: "STIXGeneral,'Arial Unicode MS'" 
+                   fonts: "STIXGeneral,'Arial Unicode MS'"
                 }
             },
             showProcessingMessages: false

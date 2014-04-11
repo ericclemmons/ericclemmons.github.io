@@ -13,12 +13,12 @@
         <div class="container">
             <a class="brand light" href="{{ site.url }}" role="banner" itemprop="url">
 
-                {% if site.logo %}<img itemprop="logo" src="{{ site.url }}/images/{{ site.logo }}" alt="{{ site.title }} Logo" />{% endif %}
+                {% if site.logo %}<img class="img-circle img-thumbnail" itemprop="logo" src="{{ site.logo }}" alt="{{ site.title }} Logo" />{% endif %}
 
             <h1 class="blog-title light" itemprop="name">
                 {{ site.title }}
             </h1>
-                
+
             </a>
             <h2 class="blog-description light bordered bordered-top" itemprop="description">
                 {{ site.description }}
@@ -29,13 +29,13 @@
     <div class="inner">
         <div class="container">
             <a class="brand" href="{{ site.url }}" role="banner" itemprop="url">
-                
-                    <img itemprop="logo" src="{{ site.url }}/images/{{ site.logo }}" alt="{{ site.title }} Logo" />
+
+                    <img class="img-circle img-thumbnail" itemprop="logo" src="{{ site.logo }}" alt="{{ site.title }} Logo" />
 
             <h1 class="blog-title light" itemprop="name">
                 {{ site.title }}
             </h1>
-                
+
             </a>
         </div>
     </div>
@@ -77,12 +77,12 @@
         <div class="row">
             <div class="page-body" itemprop="description">
             {{ content }}
-            </div>    
+            </div>
         </div>
     </div>
 </div>
     {% include footer.html %}
 
-{% include scripts.html %}  
+{% include scripts.html %}
 </body>
 </html>

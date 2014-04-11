@@ -1,5 +1,5 @@
 title:            Eric Clemmons
-description:      "VP of Software Development @CMN. Dad, open-source addict, musician. Details matter."
+description:      "VP of Software Development at CMN.com. Dad, open-source addict, musician. Details matter."
 logo:             http://www.gravatar.com/avatar/b6ffb4f3fe821e31f69923630dfdebc5.png
 disqus_shortname: ericclemmons
 # Assign a default image for your site's header and footer
@@ -11,7 +11,7 @@ readtime:         true
 # Turn on or off the fin animations in the header and footer
 animated_fins:	  true
 # Specify the fin color in RGB value
-fin_color:        "0,0,0"
+fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
 # or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
