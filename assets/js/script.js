@@ -46,6 +46,9 @@ function postInit() {
     // Set lead paragraphs
     $('.post-body p:first-child').addClass('lead');
 
+    // Add `.page-header` to H3 + H4s
+    $('.post-body').find('h3, h4').addClass('page-header');
+
     // Set feature image
     var featured = $('.featured-image').find('img').attr('src');
     if (featured) {
