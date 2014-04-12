@@ -5,22 +5,22 @@
 
 ### Development
 
-```
+~~~
 $ jekyll serve --watch --drafts
-```
+~~~
 
 
 ### Deployment
 
-```
+~~~
 $ jekyll build
-```
+~~~
 
 Commit changes, then:
 
-```
+~~~
 git push origin master
-```
+~~~
 
 
 ### License
