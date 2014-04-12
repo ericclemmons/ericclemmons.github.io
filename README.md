@@ -6,7 +6,7 @@
 ### Development
 
 ```
-$ jekyll serve --watch
+$ jekyll serve --watch --drafts
 ```
 
 
