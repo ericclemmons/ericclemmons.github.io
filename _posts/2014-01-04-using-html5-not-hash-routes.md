@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using HTML5, Not Hash Routes
-categories: [AngularJS]
+categories: [angular]
 tags: [angular, html5, javascript]
 ---
 
