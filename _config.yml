@@ -53,7 +53,7 @@ timezone:    America/Chicago
 future:      true
 pygments:    true
 markdown:    kramdown
-paginate:    10
+paginate:    50
 paginate_path: "page:num"
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
