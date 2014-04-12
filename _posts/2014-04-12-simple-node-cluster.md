@@ -7,12 +7,12 @@ tags: [node, cluster, express]
 
 After much testing of our internal API, we made it available for several sites to use & got *terrible* performance.
 
-Of course, we got better performance with Node than we did with PHP, thanks to `async` parallelizing functions, but we didn't think too much about Node's
-single-threaded nature, as seen here:
-
-> ![cluster](/images/node/cluster.png)
+Of course, we got better performance with Node than we did with PHP, thanks to `async` parallelizing functions, but we didn't think *too much* about Node's
+single-threaded nature.
 
 We already had several sites using the API with more being added daily, all causing performance to quickly dwindle.
+
+- - -
 
 In a rush, we discovered Node's [`cluster`][cluster] module, which I don't remember from `v0.6`, but is pretty reliable in `v0.10`.
 
@@ -97,5 +97,8 @@ Express server listening on port 3000
 Express server listening on port 3000
 Express server listening on port 3000
 ~~~
+
+> ![cluster](/images/node/cluster.png)
+
 
 [cluster]: http://nodejs.org/api/cluster.html
