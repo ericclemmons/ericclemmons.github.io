@@ -22,7 +22,7 @@ When I first attempted this, I ran into several problems:
 
 I realized there's no perfect way of doing this, and I surely didn't want to insert a single row at a time.
 
-### Copying Groups of SQL by Size, not Rows
+### Group `INSERT`s by Size, not Rows
 
 First, let's use the following tools:
 
