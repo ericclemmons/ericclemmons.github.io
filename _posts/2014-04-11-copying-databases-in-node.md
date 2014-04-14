@@ -31,7 +31,7 @@ First, let's use the following tools:
 - [Knex.js][knex] for the DBAL.
 - [ProgressBar][progress] for the progress bar.
 
-The premise is to copy `N` rows that roughly equat to `M` amount of memory.
+The premise is to copy `N` rows that roughly equate to `M` amount of memory.
 
 #### 1. Setup dependencies
 
