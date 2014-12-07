@@ -5,8 +5,6 @@ categories: [angular]
 tags: [angular, filter]
 ---
 
-# Angular Trust Filter
-
 It seems every Angular project I write, at some point, sees the error:
 
 > `Attempting to use an unsafe value in a safe context.`
