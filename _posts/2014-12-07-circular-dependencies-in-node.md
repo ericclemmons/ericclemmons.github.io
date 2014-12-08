@@ -58,5 +58,5 @@ module.exports.factory = MyFactory;
 
 This way, at runtime, `factory` is available via the original `module.exports` reference.
 
-Now all circular dependencies are referencing a single object whose reference doesn't change.
-
+Now all circular dependencies are referencing the same object from the first
+`require` to the last!
